@@ -1,0 +1,54 @@
+.btn {
+    border-radius: 50px;
+    @extend .sans-serif;
+}
+
+.btn-primary {
+    background-color: $brand-primary;
+    color: white !important;
+    border: 0;
+    &:hover,
+    &:active,
+    &.active {
+        background-color: $brand-lighter !important;
+    }
+}
+
+.btn-secondary {
+    background-color: $color-dark-gray;
+    color: white !important;
+    border: 0 !important;
+    padding-left: 20px;
+    padding-right: 20px;
+    &:hover,
+    &:active,
+    &.active {
+        background-color: $color-darker-gray !important;
+    }
+}
+
+.btn-clear {
+    color: #fff;
+    background-color: transparent;
+    border: 2px solid white;
+    padding: 13px 60px;
+}
+
+.btn-clear:hover {
+    color: #1A1B1D;
+    background-color: white;
+}
+
+.btn-clear:focus,
+.btn-clear.focus {
+    box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.1);
+}
+
+.btn-clear.disabled,
+.btn-clear:disabled {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.card-body {
+    padding: 0;
+}
