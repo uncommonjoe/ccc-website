@@ -81,7 +81,7 @@ scrollMagic();
 
 function scrollMagic() {
     var controller = new ScrollMagic.Controller();
-    var parralaxBg = TweenMax.staggerFromTo(".parallax-bg", 5, { backgroundPosition: "0 0" }, { backgroundPosition: "0 -20vh" });
+    var parralaxBg = TweenMax.staggerFromTo(".parallax-bg", 5, { backgroundPosition: "0 100px" }, { backgroundPosition: "0 0" });
 
     var animation = new TimelineMax().add([
         TweenMax.fromTo(
@@ -120,6 +120,7 @@ function scrollMagic() {
         //.addIndicators()
         .addTo(controller);
 
+
     if ($(window).width() > 845) {
         new ScrollMagic.Scene({
                 triggerElement: ".pin-trigger",
@@ -138,6 +139,6 @@ function scrollMagic() {
             triggerHook: 1
         })
         .setTween(parralaxBg)
-        //.addIndicators()
+        .addIndicators()
         .addTo(controller);
 }

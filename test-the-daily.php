@@ -1,10 +1,11 @@
 <?php
-/* Template Name: Daily Pastoral Checkin */
+/* Template Name: TEST The Daily */
 
 get_header();
 
-$pageNumber = 2017;
 $testPageNumber = 2316;
+$pageNumber = $testPageNumber;
+//$pageNumber = 2017;
 ?>
 
 <div class="page-wrap">

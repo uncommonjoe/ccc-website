@@ -16,14 +16,11 @@ $color-darker-gray: #797D84;
 $color-gray: #BDC0C6;
 $color-light-gray: #E4E5E8;
 $color-lightest-gray: #f0f0f0;
-//$brand-primary: rgb(193, 141, 25); // #c18d19
-$brand-primary: #0c7b93; // #c18d19
-$brand-lighter: lighten($brand-primary, 30%);
-$brand-light: lighten($brand-primary, 60%);
-$brand-primary-8: rgba(12, 123, 147, .8);
-$brand-primary-5: rgba(12, 123, 147, .5);
-//$brand-primary-8: rgba(193, 141, 25, .8);
-//$brand-primary-5: rgba(193, 141, 25, .5);
+$brand-primary: rgb(193, 141, 25); // #c18d19
+$brand-lighter: #E3A926;
+$brand-light: #FFF3D9;
+$brand-primary-8: rgba(193, 141, 25, .8);
+$brand-primary-5: rgba(193, 141, 25, .5);
 $plyr-background: $color-light-gray;
 $plyr-control: rgba(26, 27, 29, .4);
 $plyr-progress: $color-gray;

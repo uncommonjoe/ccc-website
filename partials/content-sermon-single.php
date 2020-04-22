@@ -102,6 +102,7 @@ $args = $GLOBALS['wpfc_partial_args'];
 						<img src="<?php echo get_template_directory_uri(); ?>/img/apple-podcast-badge.png" height="40" width="165" alt="Listen on Apple Podcast" style="width: 165px;" class="podcast" />
 					</a>
 				
+
 					<div class="mt-3">
 						<a href="https://open.spotify.com/show/6IvTBM4gFulFycIXmjYaRJ" target="_blank">
 							<img src="<?php echo get_template_directory_uri(); ?>/img/spotify-podcast-badge.png" height="40" width="165" alt="Listen on Spotify" style="width: 165px;" class="podcast" />
