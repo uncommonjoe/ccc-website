@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html <?php language_attributes(); ?> lang="en-US">
+<html <?php language_attributes(); ?> lang="en-US" data-ng-app="ccc">
     <head>
     <title>
     <?php
