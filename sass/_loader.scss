@@ -116,11 +116,8 @@ body.pace-done {
 }
 
 .pace-done {
-    #loader * {
-        transition: 1s;
-        height: 0;
-        width: 0;
-        visibility: collapse;
+    #loader {
+        transition: opacity 1s;
     }
     .page-header h1 {
         animation: fade-in-bottom 0.4s ease forwards;

@@ -1,43 +1,11 @@
-.a-fade-up, .footer-fade-up {
-    opacity: 0;
-    transform: translateY(30%);
-    &.animated {
-        animation: fade-in-bottom 1s ease forwards;
-        &.delay-1 {
-            animation-delay: .1s;
-        }
-        &.delay-2 {
-            animation-delay: .2s;
-        }
-        &.delay-3 {
-            animation-delay: .3s;
-        }
-        &.delay-4 {
-            animation-delay: .4s;
-        }
-        &.delay-5 {
-            animation-delay: .5s;
-        }
-        &.delay-6 {
-            animation-delay: .6s;
-        }
-        &.delay-7 {
-            animation-delay: .7s;
-        }
-        &.delay-8 {
-            animation-delay: .8s;
-        }
-    }
-}
-
 @keyframes home-border-animation {
     0% {
-        transform: scaleX(0);
-        height: 2px;
+      transform: scaleX(0);
+          height: 2px;
     }
     25% {
-        transform: scaleX(1);
-        height: 2px;
+      transform: scaleX(1);
+          height: 2px;
     }
     50% {
         transform: scaleX(1);
@@ -47,47 +15,36 @@
         height: calc(100vh - 80px);
         transform: scaleX(1);
     }
-}
-
-@keyframes home-hero-animation {
+  }
+  
+  @keyframes home-hero-animation {
     from {
-        top: 100vh;
-    }
-    to {
-        top: 0;
-    }
-}
+		top: 100vh;
+  }
+	to {
+		top: 0;
+	}
+  }
 
 @keyframes stretch-first {
-    to {
-        transform: translateX(-30px);
-    }
+    to { transform: translateX(-30px); }
 }
 
 @keyframes stretch-middle {
-    to {
-        transform: translateX(-5px);
-    }
+	to { transform: translateX(-5px); }
 }
 
 @keyframes stretch-last {
-    to {
-        transform: translateX(40px);
-    }
+	to { transform: translateX(40px); }
 }
 
 @keyframes ellipsis {
-    to {
-        width: 1.25em;
-    }
+    to { width: 1.25em; }
 }
 
 @-webkit-keyframes ellipsis {
-    to {
-        width: 1.25em;
-    }
+    to { width: 1.25em; }
 }
-
 @keyframes fade-in-top {
     from {
         opacity: 0;
@@ -110,6 +67,7 @@
     }
 }
 
+
 @keyframes fade-in-bottom {
     from {
         opacity: 0;
@@ -120,6 +78,7 @@
         transform: translate3d(0px, -20px, 0px);
     }
 }
+
 
 @keyframes fade-in-right {
     from {

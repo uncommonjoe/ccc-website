@@ -1,13 +1,14 @@
 <?php
-/* Template Name: Daily Pastoral Checkin */
+/* Template Name: TEST The Daily */
 
 get_header();
 
-$pageNumber = 2017;
 $testPageNumber = 2316;
+$pageNumber = $testPageNumber;
+//$pageNumber = 2017;
 ?>
 
-<div class="page-wrap" data-ng-controller="theDailyController as vm">
+<div class="page-wrap">
 	<?php if(get_field('is_alert_active', $pageNumber)) : ?>
 		<div class="py-2" id="alert-message" style="background-color: <?php the_field('alert_background_color') ?>">
 			<div class="container">

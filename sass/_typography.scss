@@ -1,17 +1,15 @@
-$serif: 'Cormorant Garamond', Georgia, 'Times New Roman', Times, serif;
-$sans-serif: Montserrat, -apple-system, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
 body {
     font-size: $font-md;
-    font-family: $serif;
+    font-family: 'Times New Roman', Georgia, Times, serif;
     color: $color-darkest-gray;
 }
 
 .serif {
-    font-family: $serif;
+    font-family: 'Times New Roman', Georgia, Times, serif;
 }
 
 .sans-serif {
-    font-family: $sans-serif;
+    font-family: Montserrat, -apple-system, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif
 }
 
 .italic {

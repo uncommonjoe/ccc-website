@@ -56,6 +56,7 @@
 			<div class="col-12 col-sm-6">
 				<a class="logo" href="<?php echo get_home_url(); ?>">
 					<img src="https://cornerstonebillings.org/wp-content/uploads/2020/03/logo-short.png" alt="<?php echo bloginfo('name'); ?>" />
+					<!-- <h1>Cornerstone</h1> -->
 				</a>
 			</div>
 
