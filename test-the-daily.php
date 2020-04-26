@@ -8,7 +8,9 @@ $pageNumber = $testPageNumber;
 //$pageNumber = 2017;
 ?>
 
-<div class="page-wrap">
+<div class="page-wrap" data-ng-controller="theDailyController as vm">
+<h1 ng-show="!vm.isLoading">Service Live: {{vm.isServiceLive}}</h1>
+
 	<?php if(get_field('is_alert_active', $pageNumber)) : ?>
 		<div class="py-2" id="alert-message" style="background-color: <?php the_field('alert_background_color') ?>">
 			<div class="container">
@@ -106,8 +108,8 @@ $pageNumber = $testPageNumber;
 			</div>
 		</div>
 
-		<div class="container px-5 padding-xxl-top padding-xxl-bottom pin-trigger" id="sunday-sermon">
-			<div class="row">
+		<div class="container px-5 padding-xxl-top padding-xxl-bottom" ng-class="{'pin-trigger' : !vm.isServiceLive}" id="sunday-sermon">
+			<div class="row" ng-hide="vm.isServiceLive">
 				<div class="col-12 col-md-4 order-2 order-md-1">
 					<h2 class="break-word a-fade-up">
 						<?php the_field('sunday_service_section_title', $pageNumber); ?>
@@ -131,6 +133,16 @@ $pageNumber = $testPageNumber;
 								</div>
 							<?php endwhile; endif; ?>
 						<?php endif; ?>
+					</div>
+				</div>
+			</div>
+
+			<div class="row" ng-show="vm.isServiceLive">
+				<div class="col-12 col-md-4 order-2 order-md-1">
+					<div class="plyr plyr--full-ui plyr--video plyr--youtube plyr--fullscreen-enabled plyr--paused plyr--stopped plyr__poster-enabled">
+						<div class="plyr__video-wrapper plyr__video-embed">
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/<?php the_field('sunday_service_custom_video', $pageNumber); ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</div>
 					</div>
 				</div>
 			</div>
