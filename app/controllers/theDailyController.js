@@ -15,10 +15,10 @@ angular.module('ccc')
 
             function initial() {
 
-                // 0 = Monday, 2 = Tuesday, etc. Sunday = 6
+                // 0 = Monday, 2 = Tuesday, etc. Sunday = 0
                 //if (day == 7 && hour == 9) {
-                if (day == 6 && hour == 22) {
-                    vm.today = "Sunday!";
+                if (day == 0 && hour == 9 || day == 0 && hour == 10) {
+                    vm.today = "Checking for live";
 
                     checkLive();
                     var startInterval = $interval(checkLive, 10000)
@@ -29,7 +29,7 @@ angular.module('ccc')
                     }
 
                 } else {
-                    vm.today = "Not sunday :(";
+                    vm.today = "Not live";
                     console.log(vm.today);
                 }
 
@@ -40,7 +40,7 @@ angular.module('ccc')
                     var config = {
                         method: 'POST',
                         //url: '//cornerstonebillings.org/wp-content/themes/CCC/live.php',
-                        url: '/cornerstone/get-live',
+                        url: '/get-live',
                     };
 
                     var request = $http(config);
