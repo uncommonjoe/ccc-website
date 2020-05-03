@@ -7,7 +7,7 @@ $pageNumber = 2017;
 $testPageNumber = 2316;
 ?>
 
-<div class="page-wrap">
+<div class="page-wrap" data-ng-controller="theDailyController as vm">
 	<?php if(get_field('is_alert_active', $pageNumber)) : ?>
 		<div class="py-2" id="alert-message" style="background-color: <?php the_field('alert_background_color') ?>">
 			<div class="container">

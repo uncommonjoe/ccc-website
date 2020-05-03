@@ -69,7 +69,15 @@
         <script data-pace-options='{ "restartOnPushState": false }' src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-        <script src="<?php echo get_template_directory_uri(); ?>/js/scripts_v2.min.js"></script>
+
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.4/angular.min.js"></script>
+
+		<script src="<?php echo get_template_directory_uri(); ?>/app/app.module.js?v2.1.1"></script>
+		<script src="<?php echo get_template_directory_uri(); ?>/app/app.js?v2.1.1"></script>
+
+		<script src="<?php echo get_template_directory_uri(); ?>/app/controllers/theDailyController.js?v2.1.4"></script>
+
+        <script src="<?php echo get_template_directory_uri(); ?>/js/scripts_v2.min.js?v2.1.1"></script>
 
         <?php wp_footer(); ?>
     </body>
