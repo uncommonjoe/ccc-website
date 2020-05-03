@@ -19,7 +19,8 @@ $pageNumber = $testPageNumber;
 							Sunday worship service is live now!
 						</span>
 						
-						<a class='btn btn-light inverse px-3 py-1 ml-3' style="color: white; border-color: white" href="#sunday-sermon">
+						<!-- <a class='btn btn-light inverse px-3 py-1 ml-3' style="color: white; border-color: white" href="#sunday-sermon"> -->
+						<a class='btn btn-light inverse px-3 py-1 ml-3' style="color: white; border-color: white" href="https://www.youtube.com/watch?v=UsU2uKBiMF0">
 							Watch live
 						</a>
 					</div>
@@ -127,8 +128,8 @@ $pageNumber = $testPageNumber;
 			</div>
 		</div>
 
-		<div class="container px-5 padding-xxl-top padding-xxl-bottom" ng-class="{'pin-trigger' : !vm.isServiceLive}" id="sunday-sermon">
-			<?php if(get_field('sunday_service_custom_video', $pageNumber)) : ?>
+		<div class="container px-5 padding-xxl-top padding-xxl-bottom pin-trigger" id="sunday-sermon">
+		<?php if(get_field('sunday_service_custom_video', $pageNumber)) : ?>
 				<div class="row">
 					<div class="col-12">
 						<div class="plyr plyr--full-ui plyr--video plyr--youtube plyr--fullscreen-enabled plyr--paused plyr--stopped plyr__poster-enabled">
@@ -140,36 +141,48 @@ $pageNumber = $testPageNumber;
 				</div>
 
 			<?php else: ?>
-				<div class="row" ng-hide="vm.isServiceLive">
-					<div class="col-12 col-md-4 order-2 order-md-1">
-						<h2 class="break-word a-fade-up">
-							<?php the_field('sunday_service_section_title', $pageNumber); ?>
-						</h2>
 
-						<div class="paragraph a-fade-up delay-1"><?php the_field('sunday_service_section_paragraph', $pageNumber); ?></div>
-					</div>
+			<div class="row" ng-hide="vm.isServiceLive">
+				<div class="col-12 col-md-4 order-2 order-md-1">
+					<h2 class="break-word a-fade-up">
+						<?php the_field('sunday_service_section_title', $pageNumber); ?>
+					</h2>
 
-					<div class="col-12 col-md-8 order-1 order-md-2 mb-5">
-						<div class="pin" id="latest_sermon">
+					<div class="paragraph a-fade-up delay-1"><?php the_field('sunday_service_section_paragraph', $pageNumber); ?></div>
+				</div>
+
+				<div class="col-12 col-md-8 order-1 order-md-2 mb-5">
+					<div class="pin" id="latest_sermon">
+						<?php if(get_field('sunday_service_custom_video', $pageNumber)) : ?>
+							<div class="plyr plyr--full-ui plyr--video plyr--youtube plyr--fullscreen-enabled plyr--paused plyr--stopped plyr__poster-enabled">
+								<div class="plyr__video-wrapper plyr__video-embed">
+									<iframe width="560" height="315" src="https://www.youtube.com/embed/<?php the_field('sunday_service_custom_video', $pageNumber); ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+								</div>
+							</div>
+						<?php else: ?>
 							<?php if ($latest_sermon->have_posts()) : while ($latest_sermon->have_posts()) : $latest_sermon->the_post(); global $post; ?> 
 								<div class="wpfc-sermon-single-video wpfc-sermon-single-video-link">
 									<?php echo wpfc_render_video( get_wpfc_sermon_meta( 'sermon_video_link' ) ); ?>
 								</div>
 							<?php endwhile; endif; ?>
-						</div>
+						<?php endif; ?>
 					</div>
 				</div>
+			</div>
 
-				<div class="row" ng-show="vm.isServiceLive">
-					<div class="col-12">
+			<div class="row" ng-show="vm.isServiceLive">
+					<div class="col-12 text-center">
+						<a href="https://www.youtube.com/channel/UC1Ynk4qAMEVc92G-t-RXmeg/live" class="btn btn-secondary"  style="background-color: #dd3333">Watch live on YouTube</a>
+						
 						<div class="plyr plyr--full-ui plyr--video plyr--youtube plyr--fullscreen-enabled plyr--paused plyr--stopped plyr__poster-enabled">
 							<div class="plyr__video-wrapper plyr__video-embed">
-								<iframe width="560" height="315" src="https://www.youtube.com/embed/Zhpn7zJKG9Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+								<iframe width="560" height="315" src="https://www.youtube.com/UC1Ynk4qAMEVc92G-t-RXmeg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 							</div>
 						</div>
+
+						<div>If you are having troubles viewing above, please go directly to <a href="https://www.youtube.com/channel/UC1Ynk4qAMEVc92G-t-RXmeg/live">our YouTube channel</a></div>
 					</div>
 				</div>
-
 			<?php endif; ?>
 		</div>
 
@@ -182,12 +195,12 @@ $pageNumber = $testPageNumber;
 				</div>
 
 				<div class="row">
-					<div class="col-12 d-none d-sm-block a-fade-up">
+					<div class="col-12 d-none d-sm-block">
 						<div id="breeze_giving_embed" data-subdomain="cccbillings" data-width="100%" data-background_color="fffff" data-text_color="000" data-donate_button_background_color="777777" data-donate_button_text_color="ffffff" data-fund_id="" data-frequency="" data-amount=""></div>
 						<script src="https://www.breezechms.com/js/give.js"></script>
 					</div>
 
-					<div class="col-12 d-sm-none text-center a-fade-up delay-1">
+					<div class="col-12 d-sm-none text-center delay-1">
 						<a class="btn btn-light" href="https://cccbillings.breezechms.com/give/online" target="_blank">Tap to give</a>
 					</div>
 				</div>
@@ -231,8 +244,8 @@ $pageNumber = $testPageNumber;
 					</div>
 
 					<div class="col-12 col-md-7 a-fade-up">
-						<h2 class="a-fade-up delay-2"><?php the_field('growth_group_title', $pageNumber) ?></h2>
-						<div class="a-fade-up delay-2"><?php the_field('growth_group_paragraph', $pageNumber) ?></div>
+						<h2 class=""><?php the_field('growth_group_title', $pageNumber) ?></h2>
+						<div class=""><?php the_field('growth_group_paragraph', $pageNumber) ?></div>
 					</div>
 				</div>
 			</div>
