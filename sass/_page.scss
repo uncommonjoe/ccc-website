@@ -46,6 +46,7 @@
 
 .page-header.fixed-bg:before, .fixed-bg {
     background-attachment: fixed !important;
+    background-size: cover !important;
 }
 
 @media (max-width: $device-sm) {

@@ -22,11 +22,10 @@
         <meta property="og:url" content="<?php echo get_page_link(); ?>" />
         
         <!-- <link href="<?php bloginfo('stylesheet_url'); ?>" rel="stylesheet" type="text/css"> -->
-        <link href="<?php echo get_template_directory_uri(); ?>/style.min.css?v.2.5" rel="stylesheet" type="text/css">
+        <link href="<?php echo get_template_directory_uri(); ?>/style.min.css?v.2.6" rel="stylesheet" type="text/css">
 
         <link rel="icon" type="image/png" sizes="512x512" href="<?php echo get_template_directory_uri(); ?>/img/favicon_teal.png">
         <link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri(); ?>/img/apple-icon.png">
-
 
         <style type="text/css">
             .page-header::before {
