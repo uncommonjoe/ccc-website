@@ -1,7 +1,26 @@
-#the-daily {
-    height: 110vh;
-    .section-img {
-        max-width: 250px;
+.page-header {
+    &:before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+    &#the-daily {
+        height: auto;
+        position: relative;
+        .section-img {
+            max-width: 250px;
+        }
+        .section-content {
+            padding-top: 300px;
+            padding-bottom: 100px;
+            position: unset;
+            top: auto;
+            left: auto;
+            transform: translate(0, 0);
+            width: auto;
+        }
     }
 }
 
