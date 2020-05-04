@@ -57,8 +57,8 @@ $pageNumber = 2017;
 			</div>
 	
 			<div class="row margin-xxl-top">
-				<div class="col-12 px-4 px-md-0" style="z-index: 5;">
-					<div class="plyr plyr--full-ui plyr--video plyr--youtube plyr--fullscreen-enabled plyr--paused plyr--stopped plyr__poster-enabled">
+				<div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3" style="z-index: 5;">
+					<div class="ml-4 plyr plyr--full-ui plyr--video plyr--youtube plyr--fullscreen-enabled plyr--paused plyr--stopped plyr__poster-enabled">
 						<div class="plyr__video-wrapper plyr__video-embed">
 							<iframe width="560" height="315" title="<?php the_field('daily_update_title', $pageNumber); ?>" src="https://www.youtube.com/embed/<?php the_field('youtube_video_url', $pageNumber); ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 						</div>
