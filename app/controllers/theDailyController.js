@@ -17,21 +17,21 @@ angular.module('ccc')
 
                 // 0 = Monday, 2 = Tuesday, etc. Sunday = 0
                 //if (day == 7 && hour == 9) {
-                if (day == 0 && hour == 9 || day == 0 && hour == 10) {
-                    vm.today = "Checking for live";
+                // if (day == 0 && hour == 9 || day == 0 && hour == 10) {
+                //    vm.today = "Checking for live";
 
-                    checkLive();
-                    var startInterval = $interval(checkLive, 10000)
+                checkLive();
+                var startInterval = $interval(checkLive, 60000)
 
-                    var stopInterval = function() {
-                        $interval.cancel(startInterval)
-                        vm.isLoading = false;
-                    }
-
-                } else {
-                    vm.today = "Not live";
-                    console.log(vm.today);
+                var stopInterval = function() {
+                    $interval.cancel(startInterval)
+                    vm.isLoading = false;
                 }
+
+                // } else {
+                //     vm.today = "Not live";
+                //     console.log(vm.today);
+                // }
 
                 function checkLive() {
                     //http://localhost:8888/cornerstone/wp-content/themes/cornerstone-community-church/live.php?live=true
