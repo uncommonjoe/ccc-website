@@ -1,1 +1,3 @@
-# cornerstone-community-church
+# Cornerstone Community Church
+
+https://cornerstonebillings.org
