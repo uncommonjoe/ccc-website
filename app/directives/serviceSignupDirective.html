@@ -1,0 +1,70 @@
+<h5 class="sans-serif text-muted text-center margin-xl-bottom">{{sunday | date : "EEEE MMM d"}}</h5>
+
+<form name="serviceSignup" class="needs-validation" data-ng-submit="serviceSignup.$valid && submit()" data-ng-hide="confirmed || servicesAreFull" novalidate>
+    <div class="form-group has-feedback">
+        <label for="name">Your Name&nbsp;<span class="text-danger">*</span></label>
+        <input type="text" id="name" name="name" class="form-control form-control-lg" ng-class="{'is-invalid' : serviceSignup.name.$error.required && serviceSignup.$submitted}" ng-model="signup.name" ng-model- required />
+        <div class="invalid-feedback">Please enter your name.</div>
+    </div>
+
+    <div class="form-group has-feedback">
+        <label for="email">Email&nbsp;<span class="text-danger">*</span></label>
+        <input type="email" id="email" name="email" class="form-control form-control-lg" ng-class="{'is-invalid' : serviceSignup.email.$error.required && serviceSignup.$submitted || serviceSignup.email.$error.email && serviceSignup.$submitted}" ng-model="signup.email"
+            required />
+        <div class="invalid-feedback">Please enter a valid email address.</div>
+    </div>
+
+    <div class="form-group has-feedback">
+        <label for="time">Preferred service to attend&nbsp;<span class="text-danger">*</span></label>
+
+        <div class="form-check">
+            <div class="custom-control custom-radio">
+                <input type="radio" id="firstService" name="service" data-ng-model="signup.time" value="9 AM" class="custom-control-input" ng-class="{'is-invalid' : serviceSignup.service.$error.required && serviceSignup.$submitted}" ng-disabled="firstServiceAttendees >= maxAttendance"
+                    ng-change="updateMaxValue()" required>
+
+                <label class="custom-control-label" for="firstService">
+                    9 AM
+                    <span class="badge badge-secondary small" ng-hide="firstServiceAttendees >= maxAttendance">{{firstServiceAttendees}} signed up</span>
+                    <span class="badge badge-danger small" ng-show="firstServiceAttendees >= maxAttendance">Full</span>
+                    <span class="badge badge-warning small" ng-show="firstServiceAttendees >= 85 && firstServiceLeft > 0">{{firstServiceLeft}} left!</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="form-check">
+            <div class="custom-control custom-radio">
+                <input type="radio" id="secondService" name="service" data-ng-model="signup.time" value="11 AM" class="custom-control-input" ng-class="{'is-invalid' : serviceSignup.service.$error.required && serviceSignup.$submitted}" ng-disabled="secondServiceAttendees >= maxAttendance"
+                    ng-change="updateMaxValue()" required>
+                <label class="custom-control-label" for="secondService">
+                    11 AM
+                    <span class="badge badge-secondary small" ng-hide="secondServiceAttendees >= maxAttendance">{{secondServiceAttendees}} signed up</span>
+                    <span class="badge badge-danger small" ng-show="secondServiceAttendees >= maxAttendance">Full</span>
+                    <span class="badge badge-warning small" ng-show="secondServiceAttendees >= 85 && secondServiceLeft > 0">{{secondServiceLeft}} left!</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="invalid-feedback">Please select a service time.</div>
+    </div>
+
+    <div class="form-group has-feedback">
+        <label for="people">Number of people attending including myself&nbsp;<span class="text-danger">*</span></label>
+        <input type="number" name="people" min="1" ng-max="maxLength" class="form-control form-control-lg" ng-class="{'is-invalid' : serviceSignup.people.$error.required && serviceSignup.$submitted || serviceSignup.people.$error.max && serviceSignup.$submitted}"
+            id="people" ng-model="signup.people" required />
+        <div class="invalid-feedback">Please enter up to {{maxLength}} people.</div>
+
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-lg px-5">Signup</button>
+</form>
+
+
+{{signup}}
+
+<div class="alert alert-danger" ng-show="servicesAreFull">
+    <strong>We're so sorry!</strong> All seats for both services have been filled for this coming Sunday.
+</div>
+
+<div class="alert alert-success" ng-show="confirmed">
+    <strong>Success!</strong> You have signed up for the {{signup.time}} service this coming Sunday. We are looking forward to seeing you!
+</div>
