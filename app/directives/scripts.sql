@@ -33,7 +33,7 @@ SELECT SUM(firstService), SUM(secondService) FROM `wp_service_attendees` WHERE 1
 
 INSERT INTO `wp_service_attendees`(`id`, `firstService`, `secondService`) VALUES (1,0,0)
 
-INSERT INTO `wp_service_attendees` (name, email, firstService) VALUES ('Joe', 'uncommonjoe@gmail.com', firstService + 10);
+INSERT INTO `wp_service_attendees` (name, email, firstService) VALUES ('Joe', 'uncommonjoe@gmail.com',  56);
 
 UPDATE `wp_service_attendees` SET `firstService` = 90, `secondService` = 50 WHERE 1;
 SELECT * FROM `wp_service_attendees` WHERE 1;

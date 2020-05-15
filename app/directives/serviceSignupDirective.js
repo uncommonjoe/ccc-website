@@ -1,6 +1,6 @@
 angular.module('ccc')
-    .directive('serviceSignup', ['$http',
-        function($http) {
+    .directive('serviceSignup', ['$http', '$location', '$anchorScroll',
+        function($http, $location, $anchorScroll) {
             return {
                 restrict: 'E',
                 templateUrl: '../wp-content/themes/cornerstone-community-church/app/directives/serviceSignupDirective.html',
@@ -11,8 +11,10 @@ angular.module('ccc')
                     $scope.secondServiceAttendees;
                     $scope.maxAttendance = 100;
                     $scope.confirmed = false;
+                    $scope.isLoading = true;
 
                     $scope.signup = {}
+                    $scope.signup.people = 1;
                     $scope.submit = submit;
                     $scope.updateMaxValue = updateMaxValue;
 
@@ -32,6 +34,7 @@ angular.module('ccc')
                             $scope.attendees = response.data;
 
                             updateVariables();
+                            $scope.isLoading = false;
                         });
                         updateMaxValue();
                     }
@@ -60,6 +63,8 @@ angular.module('ccc')
                     }
 
                     function submit() {
+                        $scope.isLoading = true;
+
                         // Submit signup to database
                         var config = {
                             method: 'POST',
@@ -74,10 +79,13 @@ angular.module('ccc')
 
                             updateVariables();
 
-                            $scope.confirmed = true;
-                        });
+                            // TODO Send confirmation email
 
-                        // TODO Send confirmation email
+                            $scope.confirmed = true;
+                            $scope.isLoading = false;
+                            $location.hash('serviceSignup');
+                            $anchorScroll();
+                        });
                     }
 
                     function updateVariables() {
