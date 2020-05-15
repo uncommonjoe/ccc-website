@@ -3,7 +3,8 @@ angular.module('ccc')
         function($http, $location, $anchorScroll) {
             return {
                 restrict: 'E',
-                templateUrl: '../wp-content/themes/cornerstone-community-church/app/directives/serviceSignupDirective.html',
+                templateUrl: '../wp-content/themes/CCC/app/directives/serviceSignupDirective.html',
+                //templateUrl: '../wp-content/themes/cornerstone-community-church/app/directives/serviceSignupDirective.html',
                 controller: ['$scope', function($scope) {
                     //link: function($scope) {
 
@@ -24,7 +25,7 @@ angular.module('ccc')
                         // Checking database for Sunday signups
                         var config = {
                             method: 'POST',
-                            url: '/cornerstone/attendees-get',
+                            url: '/attendees-get',
                             data: '',
                         };
 
@@ -68,7 +69,7 @@ angular.module('ccc')
                         // Submit signup to database
                         var config = {
                             method: 'POST',
-                            url: '/cornerstone/attendees-set',
+                            url: '/attendees-set',
                             data: $scope.signup,
                         };
 

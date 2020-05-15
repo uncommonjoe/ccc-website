@@ -80,12 +80,12 @@
 
 		$recipient = $email;
 
-		$headers = "From: Cornerstone Community Churc <office@cornerstonebillings.org>\r\n";
+		$headers = "From: Cornerstone Community Church <office@cornerstonebillings.org>\r\n";
 		$headers .= "Reply-To: <office@cornerstonebillings.org>\r\n";
 		$headers .= "MIME-Version: 1.0\r\n";
 		$headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 
-		$subject = "Confirmation Sunday Service"; 
+		$subject = "Confirmation for Sunday Worship Service"; 
 
 		mail($recipient, $subject, $message, $headers);
 
