@@ -19,8 +19,7 @@ $pageNumber = $testPageNumber;
 							Sunday worship service is live now!
 						</span>
 						
-						<!-- <a class='btn btn-light inverse px-3 py-1 ml-3' style="color: white; border-color: white" href="#sunday-sermon"> -->
-						<a class='btn btn-light inverse px-3 py-1 ml-3' style="color: white; border-color: white" href="https://www.youtube.com/watch?v=UsU2uKBiMF0">
+						<a class='btn btn-light inverse px-3 py-1 ml-3' style="color: white; border-color: white" href="https://www.youtube.com/channel/UC1Ynk4qAMEVc92G-t-RXmeg/live" target="_blank">
 							Watch live
 						</a>
 					</div>
@@ -60,8 +59,8 @@ $pageNumber = $testPageNumber;
 			</div>
 	
 			<div class="row margin-xxl-top">
-				<div class="col-12 px-4 px-md-0" style="z-index: 5;">
-					<div class="plyr plyr--full-ui plyr--video plyr--youtube plyr--fullscreen-enabled plyr--paused plyr--stopped plyr__poster-enabled">
+				<div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3" style="z-index: 5;">
+					<div class="ml-4 plyr plyr--full-ui plyr--video plyr--youtube plyr--fullscreen-enabled plyr--paused plyr--stopped plyr__poster-enabled">
 						<div class="plyr__video-wrapper plyr__video-embed">
 							<iframe width="560" height="315" title="<?php the_field('daily_update_title', $pageNumber); ?>" src="https://www.youtube.com/embed/<?php the_field('youtube_video_url', $pageNumber); ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 						</div>
@@ -76,19 +75,18 @@ $pageNumber = $testPageNumber;
 	</div>
 
 	<?php if(get_field('sunday_signup_contact_form', $pageNumber)) : ?>
-		<div class="page-content">
+		<div class="page-content" id="serviceSignup">
 			<div class="padding-xxl-top padding-xxl-bottom">
 				<div class="container px-5">
 					<div class="row">
 						<div class="col-12 pl-4 a-fade-up">
-							<h2 class="text-center mb-5">Service Signup</h2>
+							<h2 class="text-center mb-0">Service Signup</h2>
 						</div>
 					</div>
 
 					<div class="row">
 						<div class="col-12 offset-0 col-sm-10 offset-sm-1 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
-							<?php the_field('contact_form', $pageNumber); ?>
-							<!-- [contact-form-7 id=" 2497"="" title="Service Question" ] -->
+							<service-signup></service-signup>
 						</div>
 					</div>
 				</div>
@@ -171,16 +169,14 @@ $pageNumber = $testPageNumber;
 			</div>
 
 			<div class="row" ng-show="vm.isServiceLive">
-					<div class="col-12 text-center">
-						<a href="https://www.youtube.com/channel/UC1Ynk4qAMEVc92G-t-RXmeg/live" class="btn btn-secondary"  style="background-color: #dd3333">Watch live on YouTube</a>
-						
-						<div class="plyr plyr--full-ui plyr--video plyr--youtube plyr--fullscreen-enabled plyr--paused plyr--stopped plyr__poster-enabled">
+					<div class="col-12 text-center">						
+						<div class="plyr plyr--full-ui plyr--video plyr--youtube plyr--fullscreen-enabled plyr--paused plyr--stopped plyr__poster-enabled" style="height:auto;">
 							<div class="plyr__video-wrapper plyr__video-embed">
-								<iframe width="560" height="315" src="https://www.youtube.com/UC1Ynk4qAMEVc92G-t-RXmeg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+								<iframe width="560" height="315" src="https://www.youtube.com/embed/live_stream?channel=UC1Ynk4qAMEVc92G-t-RXmeg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 							</div>
 						</div>
 
-						<div>If you are having troubles viewing above, please go directly to <a href="https://www.youtube.com/channel/UC1Ynk4qAMEVc92G-t-RXmeg/live">our YouTube channel</a></div>
+						<div class="small mt-3">If you are having troubles viewing above, please go directly to <a href="https://www.youtube.com/channel/UC1Ynk4qAMEVc92G-t-RXmeg/live" target="_blank">our YouTube channel</a></div>
 					</div>
 				</div>
 			<?php endif; ?>

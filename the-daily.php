@@ -167,17 +167,14 @@ $pageNumber = 2017;
 			</div>
 
 			<div class="row" ng-show="vm.isServiceLive">
-					<div class="col-12 text-center">
-						<a href="https://www.youtube.com/channel/UC1Ynk4qAMEVc92G-t-RXmeg/live" class="btn btn-secondary"  style="background-color: #dd3333">Watch live on YouTube</a>
-						
-						<div class="my-5 plyr plyr--full-ui plyr--video plyr--youtube plyr--fullscreen-enabled plyr--paused plyr--stopped plyr__poster-enabled">
+					<div class="col-12 text-center">						
+						<div class="plyr plyr--full-ui plyr--video plyr--youtube plyr--fullscreen-enabled plyr--paused plyr--stopped plyr__poster-enabled" style="height:auto;">
 							<div class="plyr__video-wrapper plyr__video-embed">
-								<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/UC1Ynk4qAMEVc92G-t-RXmeg/live" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-									<iframe width="560" height="315" src="https://www.youtube.com/embed/J-_bVMgg0Eo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+								<iframe width="560" height="315" src="https://www.youtube.com/embed/live_stream?channel=UC1Ynk4qAMEVc92G-t-RXmeg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 							</div>
 						</div>
 
-						<div>If you are having troubles viewing above, please go directly to <a href="https://www.youtube.com/channel/UC1Ynk4qAMEVc92G-t-RXmeg" target="_blank">our YouTube channel</a></div>
+						<div class="small mt-3">If you are having troubles viewing above, please go directly to <a href="https://www.youtube.com/channel/UC1Ynk4qAMEVc92G-t-RXmeg/live" target="_blank">our YouTube channel</a></div>
 					</div>
 				</div>
 			<?php endif; ?>
