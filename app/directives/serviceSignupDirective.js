@@ -91,10 +91,10 @@ angular.module('ccc')
 
                     function updateVariables() {
                         $scope.sunday = $scope.attendees[0].sunday;
-                        $scope.firstServiceAttendees = $scope.attendees[0].firstService;
+                        $scope.firstServiceAttendees = $scope.attendees[0].sumFirstService;
                         $scope.firstServiceLeft = $scope.maxAttendance - $scope.firstServiceAttendees;
 
-                        $scope.secondServiceAttendees = $scope.attendees[0].secondService;
+                        $scope.secondServiceAttendees = $scope.attendees[0].sumSecondService;
                         $scope.secondServiceLeft = $scope.maxAttendance - $scope.secondServiceAttendees;
 
                         $scope.mostFull = Math.min($scope.firstServiceLeft, $scope.secondServiceLeft);
