@@ -37,8 +37,8 @@ get_header();
 								<tr>
 									<th class="font-sm align-middle" scope="col">Name</th>
 									<th class="font-sm align-middle" scope="col">Email</th>
-									<th class="font-sm align-middle" scope="col">9 AM</th>
-									<th class="font-sm align-middle" scope="col">11 AM</th>
+									<th class="font-sm align-middle" scope="col">First Service</th>
+									<th class="font-sm align-middle" scope="col">Second Service</th>
 									<th class="font-sm align-middle" scope="col"></th>
 								</tr>
 							</thead>
@@ -50,6 +50,7 @@ get_header();
 									<td class="font-sm align-middle">{{attendee.firstService}}</td>
 									<td class="font-sm align-middle">{{attendee.secondService}}</td>
 									<td class="text-right">
+										<button type="button" class="btn btn-primary btn-sm font-sm px-4 py-2 mr-3" ng-click="vm.swapServices(attendee.id)" ng-disabled="vm.isLoading">Swap Services</button>
 										<button type="button" class="btn btn-danger btn-sm font-sm px-4 py-2" ng-click="vm.deleteSignup(attendee.id)" ng-disabled="vm.isLoading">Delete</button>
 									</td> 
 								</tr>

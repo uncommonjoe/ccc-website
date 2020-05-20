@@ -42,3 +42,10 @@ SELECT * FROM `wp_service_attendees` WHERE 1;
 
 SELECT CURDATE() + INTERVAL 6 - weekday(CURDATE()) DAY AS Sunday;
 
+
+-- Swap Service & Update
+UPDATE wp_service_attendees
+SET firstService=firstService+secondService,secondService=firstService-secondService,firstService=firstService-secondService
+WHERE id = 6;
+SELECT * FROM `wp_service_attendees` WHERE 1;
+

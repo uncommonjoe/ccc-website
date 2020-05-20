@@ -8,7 +8,7 @@
     $time = $form_data->time;
     $people = $form_data->people;
 
-	if($time == "9 AM") {
+	if($time == "8:30 AM") {
 		$firstPeople = $people;
 		$secondPeople = 0;
 	}
@@ -29,9 +29,6 @@
 
 	if($results){
 		echo json_encode($results);
-
-		// send email
-		// Hi NAME, I just wanted to let you know that I received your request for XX people to be included in Sunday’s service. We have room for you! I’m looking forward to seeing you at church on Sunday!
 
 		$message = '
 			<body style="background: linear-gradient(to right, rgba(2, 168, 204, 0.5), rgba(255, 128, 055, 0.5)), url(https://cornerstonebillings.org/wp-content/uploads/2020/03/photo-1434394354979-a235cd36269d.jpeg) center center / cover no-repeat;">
@@ -88,7 +85,6 @@
 		$subject = "Confirmation for Sunday Worship Service"; 
 
 		mail($recipient, $subject, $message, $headers);
-
 
 	}
 	else {

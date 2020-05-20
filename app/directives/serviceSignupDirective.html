@@ -19,27 +19,25 @@
 
         <div class="form-check">
             <div class="custom-control custom-radio">
-                <input type="radio" id="firstService" name="service" data-ng-model="signup.time" value="9 AM" class="custom-control-input" ng-class="{'is-invalid' : serviceSignup.service.$error.required && serviceSignup.$submitted}" ng-disabled="firstServiceAttendees >= maxAttendance || isLoading"
+                <input type="radio" id="firstService" name="service" data-ng-model="signup.time" ng-value="firstServiceValue" class="custom-control-input" ng-class="{'is-invalid' : serviceSignup.service.$error.required && serviceSignup.$submitted}" ng-disabled="firstServiceAttendees >= maxAttendance || isLoading"
                     ng-change="updateMaxValue()" required>
 
                 <label class="custom-control-label" for="firstService">
-                    9 AM
-                    <span class="badge badge-secondary small" ng-hide="firstServiceAttendees >= maxAttendance">{{firstServiceAttendees}} signed up</span>
+                    {{firstServiceValue}}
+                    <span class="badge small" ng-class="firstServiceAttendees >= attendanceWarning && firstServiceLeft > 0 ? 'badge-warning' : 'badge-secondary'" ng-hide="firstServiceAttendees >= maxAttendance">{{firstServiceLeft}} seats left</span>
                     <span class="badge badge-danger small" ng-show="firstServiceAttendees >= maxAttendance">Full</span>
-                    <span class="badge badge-warning small" ng-show="firstServiceAttendees >= 85 && firstServiceLeft > 0">{{firstServiceLeft}} left!</span>
                 </label>
             </div>
         </div>
 
         <div class="form-check">
             <div class="custom-control custom-radio">
-                <input type="radio" id="secondService" name="service" data-ng-model="signup.time" value="11 AM" class="custom-control-input" ng-class="{'is-invalid' : serviceSignup.service.$error.required && serviceSignup.$submitted}" ng-disabled="secondServiceAttendees >= maxAttendance || isLoading"
+                <input type="radio" id="secondService" name="service" data-ng-model="signup.time" ng-value="secondServiceValue" class="custom-control-input" ng-class="{'is-invalid' : serviceSignup.service.$error.required && serviceSignup.$submitted}" ng-disabled="secondServiceAttendees >= maxAttendance || isLoading"
                     ng-change="updateMaxValue()" required>
                 <label class="custom-control-label" for="secondService">
-                    11 AM
-                    <span class="badge badge-secondary small" ng-hide="secondServiceAttendees >= maxAttendance">{{secondServiceAttendees}} signed up</span>
+                    {{secondServiceValue}}
+                    <span class="badge small" ng-class="secondServiceAttendees >= attendanceWarning && secondServiceLeft > 0 ? 'badge-warning' : 'badge-secondary'" ng-hide="secondServiceAttendees >= maxAttendance">{{secondServiceLeft}} seats left</span>
                     <span class="badge badge-danger small" ng-show="secondServiceAttendees >= maxAttendance">Full</span>
-                    <span class="badge badge-warning small" ng-show="secondServiceAttendees >= 85 && secondServiceLeft > 0">{{secondServiceLeft}} left!</span>
                 </label>
             </div>
         </div>

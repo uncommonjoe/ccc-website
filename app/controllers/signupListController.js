@@ -5,6 +5,7 @@ angular.module('ccc')
 
             vm.isLoading = true;
             vm.deleteSignup = deleteSignup;
+            vm.swapServices = swapServices;
 
             initial();
 
@@ -13,6 +14,7 @@ angular.module('ccc')
                 var config = {
                     method: 'POST',
                     url: '/attendees-get',
+                    //url: '/cornerstone/attendees-get',
                 };
 
                 var request = $http(config);
@@ -29,12 +31,32 @@ angular.module('ccc')
                 var config = {
                     method: 'POST',
                     url: '/attendees-delete',
+                    //url: '/cornerstone/attendees-delete',
                     data: id,
                 };
 
                 var request = $http(config);
                 request.then(function(response) {
                     vm.deleted = response.data;
+
+                    initial();
+                    vm.isLoading = false;
+                });
+            }
+
+            function swapServices(id) {
+                vm.isLoading = true;
+
+                var config = {
+                    method: 'POST',
+                    url: '/attendees-swap',
+                    //url: '/cornerstone/attendees-swap',
+                    data: id,
+                };
+
+                var request = $http(config);
+                request.then(function(response) {
+                    vm.swapped = response.data;
 
                     initial();
                     vm.isLoading = false;

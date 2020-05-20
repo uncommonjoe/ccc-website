@@ -8,9 +8,12 @@ angular.module('ccc')
                 controller: ['$scope', function($scope) {
                     //link: function($scope) {
 
+                    $scope.firstServiceValue = "8:30 AM";
+                    $scope.secondServiceValue = "10:30 AM";
                     $scope.firstServiceAttendees;
                     $scope.secondServiceAttendees;
-                    $scope.maxAttendance = 100;
+                    $scope.maxAttendance = 90;
+                    $scope.attendanceWarning = $scope.maxAttendance - 15;
                     $scope.confirmed = false;
                     $scope.isLoading = true;
 
@@ -26,6 +29,7 @@ angular.module('ccc')
                         var config = {
                             method: 'POST',
                             url: '/attendees-get',
+                            //url: '/cornerstone/attendees-get',
                             data: '',
                         };
 
@@ -42,15 +46,15 @@ angular.module('ccc')
 
                     function updateMaxValue() {
                         switch ($scope.signup.time) {
-                            case '9 AM':
-                                if ($scope.firstServiceAttendees >= 85) {
+                            case $scope.firstServiceValue:
+                                if ($scope.firstServiceAttendees >= $scope.attendanceWarning) {
                                     $scope.maxLength = $scope.mostFull;
                                 } else {
                                     $scope.maxLength = 15;
                                 }
                                 break;
 
-                            case '11 AM':
+                            case $scope.secondServiceValue:
                                 if ($scope.secondServiceAttendees >= 85) {
                                     $scope.maxLength = $scope.mostFull;
                                 } else {
@@ -70,6 +74,7 @@ angular.module('ccc')
                         var config = {
                             method: 'POST',
                             url: '/attendees-set',
+                            //url: '/cornerstone/attendees-set',
                             data: $scope.signup,
                         };
 
