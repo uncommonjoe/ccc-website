@@ -17,14 +17,24 @@ get_header();
 	<div class="page-content">
 		<div class="container px-5 padding-lg-top padding-xxl-bottom">
 			<div class="row text-center mb-5">
-				<div class="col-6 col-md-4 offset-md-2">
+				<div class="col-3">
 					<div>First Service</div>
 					<div class="h2 font-800">{{vm.attendees[0].sumFirstService}}</div>
 				</div>
 
-				<div class="col-6 col-md-4">
+				<div class="col-3">
 					<div>Second Service</div>
 					<div class="h2 font-800">{{vm.attendees[0].sumSecondService}}</div>
+				</div>
+				
+				<div class="col-3">
+					<div>First Overflow</div>
+					<div class="h2 font-800">{{vm.attendees[0].sumFirstServiceOverflow}}</div>
+				</div>
+
+				<div class="col-3">
+					<div>Second Overflow</div>
+					<div class="h2 font-800">{{vm.attendees[0].sumSecondServiceOverflow}}</div>
 				</div>
 			</div>
 
@@ -37,8 +47,10 @@ get_header();
 								<tr>
 									<th class="font-sm align-middle" scope="col">Name</th>
 									<th class="font-sm align-middle" scope="col">Email</th>
-									<th class="font-sm align-middle" scope="col">First Service</th>
-									<th class="font-sm align-middle" scope="col">Second Service</th>
+									<th class="font-sm align-middle" scope="col">1st Service</th>
+									<th class="font-sm align-middle" scope="col">2nd Service</th>
+									<th class="font-sm align-middle" scope="col">1st Overflow</th>
+									<th class="font-sm align-middle" scope="col">2nd Overflow</th>
 									<th class="font-sm align-middle" scope="col"></th>
 								</tr>
 							</thead>
@@ -47,10 +59,24 @@ get_header();
 								<tr ng-repeat="attendee in vm.attendees">
 									<td class="font-sm align-middle">{{attendee.name}}</th>
 									<td class="font-sm align-middle">{{attendee.email}}</td>
-									<td class="font-sm align-middle">{{attendee.firstService}}</td>
-									<td class="font-sm align-middle">{{attendee.secondService}}</td>
+									<td class="font-sm align-middle">
+										<span ng-if="attendee.firstService != 0">{{attendee.firstService}}</span>
+									</td>
+
+									<td class="font-sm align-middle">
+										<span ng-if="attendee.secondService != 0">{{attendee.secondService}}</span>
+									</td>
+
+									<td class="font-sm align-middle">
+										<span ng-if="attendee.firstServiceOverflow != 0">{{attendee.firstServiceOverflow}}</span>
+									</td>
+
+									<td class="font-sm align-middle">
+										<span ng-if="attendee.secondServiceOverflow != 0">{{attendee.secondServiceOverflow}}</span>
+									</td>
+
 									<td class="text-right">
-										<button type="button" class="btn btn-primary btn-sm font-sm px-4 py-2 mr-3" ng-click="vm.swapServices(attendee.id)" ng-disabled="vm.isLoading">Swap Services</button>
+										<!-- <button type="button" class="btn btn-primary btn-sm font-sm px-4 py-2 mr-3" ng-click="vm.swapServices(attendee.id)" ng-disabled="vm.isLoading">Swap Services</button> -->
 										<button type="button" class="btn btn-danger btn-sm font-sm px-4 py-2" ng-click="vm.deleteSignup(attendee.id)" ng-disabled="vm.isLoading">Delete</button>
 									</td> 
 								</tr>
@@ -61,6 +87,8 @@ get_header();
 								<td colspan="2" class="font-sm align-middle text-right font-800">Totals</td>
 								<td class="font-sm align-middle font-800">{{vm.attendees[0].sumFirstService}}</td>
 								<td class="font-sm align-middle font-800">{{vm.attendees[0].sumSecondService}}</td>
+								<td class="font-sm align-middle font-800">{{vm.attendees[0].sumFirstServiceOverflow}}</td>
+								<td class="font-sm align-middle font-800">{{vm.attendees[0].sumSecondServiceOverflow}}</td>
 								<td></td>
 							</tfoot>
 						</table>

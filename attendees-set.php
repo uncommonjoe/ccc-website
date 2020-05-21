@@ -11,19 +11,45 @@
 	if($time == "8:30 AM") {
 		$firstPeople = $people;
 		$secondPeople = 0;
+		$firstOverflowPeople = 0;
+		$secondOverflowPeople = 0;
 	}
-	else {
+	else if($time == "10:30 AM") {
 		$firstPeople = 0;
 		$secondPeople = $people;
+		$firstOverflowPeople = 0;
+		$secondOverflowPeople = 0;
+	}
+	else if($time == "8:30 AM Overflow") {
+		$firstPeople = 0;
+		$secondPeople = 0;
+		$firstOverflowPeople = $people;
+		$secondOverflowPeople = 0;
+	}
+	else if($time == "10:30 AM Overflow") {
+		$firstPeople = 0;
+		$secondPeople = 0;
+		$firstOverflowPeople = 0;
+		$secondOverflowPeople = $people;
 	}
 
 	global $wpdb;
 	
-	$query = $wpdb->prepare("INSERT INTO `wp_service_attendees` (name, email, firstService, secondService) VALUES ('$name', '$email', $firstPeople, '$secondPeople')");
+	$query = $wpdb->prepare("
+		INSERT INTO `wp_service_attendees`
+		(name, email, firstService, secondService, firstServiceOverflow, secondServiceOverflow)
+	 	VALUES ('$name', '$email', $firstPeople, '$secondPeople', '$firstOverflowPeople', '$secondOverflowPeople')
+	 ");
 
 	$wpdb->query($query);
 
-	$query = $wpdb->prepare("SELECT SUM(firstService) AS firstService, SUM(secondService) AS secondService FROM `wp_service_attendees` WHERE 1");
+	$query = $wpdb->prepare("
+		SELECT 
+			SUM(firstService) AS firstService,
+			SUM(secondService) AS secondService
+			FROM `wp_service_attendees`
+			WHERE 1
+		");
 	
 	$results =	$wpdb->get_results($query);
 

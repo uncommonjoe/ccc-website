@@ -6,14 +6,23 @@ angular.module('ccc')
                 templateUrl: '../wp-content/themes/CCC/app/directives/serviceSignupDirective.html',
                 //templateUrl: '../wp-content/themes/cornerstone-community-church/app/directives/serviceSignupDirective.html',
                 controller: ['$scope', function($scope) {
-                    //link: function($scope) {
 
+                    // Times are set in attendees-set.php as well
                     $scope.firstServiceValue = "8:30 AM";
                     $scope.secondServiceValue = "10:30 AM";
+                    $scope.firstServiceOverflowValue = $scope.firstServiceValue + " Overflow";
+                    $scope.secondServiceOverflowValue = $scope.secondServiceValue + " Overflow";
+
                     $scope.firstServiceAttendees;
                     $scope.secondServiceAttendees;
+                    $scope.firstServiceOverflowAttendees;
+                    $scope.secondServiceOverflowAttendees;
+
                     $scope.maxAttendance = 90;
                     $scope.attendanceWarning = $scope.maxAttendance - 15;
+                    $scope.overflowMaxAttendance = 25;
+                    $scope.overflowAttendanceWarning = $scope.overflowMaxAttendance - 15;
+
                     $scope.confirmed = false;
                     $scope.isLoading = true;
 
@@ -48,15 +57,31 @@ angular.module('ccc')
                         switch ($scope.signup.time) {
                             case $scope.firstServiceValue:
                                 if ($scope.firstServiceAttendees >= $scope.attendanceWarning) {
-                                    $scope.maxLength = $scope.mostFull;
+                                    $scope.maxLength = $scope.mostFull();
                                 } else {
                                     $scope.maxLength = 15;
                                 }
                                 break;
 
                             case $scope.secondServiceValue:
-                                if ($scope.secondServiceAttendees >= 85) {
-                                    $scope.maxLength = $scope.mostFull;
+                                if ($scope.secondServiceAttendees >= $scope.attendanceWarning) {
+                                    $scope.maxLength = $scope.mostFull();
+                                } else {
+                                    $scope.maxLength = 15;
+                                }
+                                break;
+
+                            case $scope.firstServiceOverflowValue:
+                                if ($scope.firstServiceOverflowAttendees >= $scope.overflowAttendanceWarning) {
+                                    $scope.maxLength = $scope.mostOverflowFull();
+                                } else {
+                                    $scope.maxLength = 15;
+                                }
+                                break;
+
+                            case $scope.secondServiceOverflowValue:
+                                if ($scope.secondServiceOverflowAttendees >= $scope.overflowAttendanceWarning) {
+                                    $scope.maxLength = $scope.mostOverflowFull();
                                 } else {
                                     $scope.maxLength = 15;
                                 }
@@ -85,8 +110,6 @@ angular.module('ccc')
 
                             updateVariables();
 
-                            // TODO Send confirmation email
-
                             $scope.confirmed = true;
                             $scope.isLoading = false;
                             $location.hash('serviceSignup');
@@ -96,14 +119,41 @@ angular.module('ccc')
 
                     function updateVariables() {
                         $scope.sunday = $scope.attendees[0].sunday;
+
+                        // Set first service attendee value and how many are left
                         $scope.firstServiceAttendees = $scope.attendees[0].sumFirstService;
                         $scope.firstServiceLeft = $scope.maxAttendance - $scope.firstServiceAttendees;
 
+                        // Set second service attendee value and how many are left
                         $scope.secondServiceAttendees = $scope.attendees[0].sumSecondService;
                         $scope.secondServiceLeft = $scope.maxAttendance - $scope.secondServiceAttendees;
 
-                        $scope.mostFull = Math.min($scope.firstServiceLeft, $scope.secondServiceLeft);
+                        // Set first service OVERFLOW attendee value and how many are left
+                        $scope.firstServiceOverflowAttendees = $scope.attendees[0].sumFirstServiceOverflow;
+                        $scope.firstServiceOverflowLeft = $scope.overflowMaxAttendance - $scope.firstServiceOverflowAttendees;
+
+                        // Set second service OVERFLOW attendee value and how many are left
+                        $scope.secondServiceOverflowAttendees = $scope.attendees[0].sumSecondServiceOverflow;
+                        $scope.secondServiceOverflowLeft = $scope.overflowMaxAttendance - $scope.secondServiceOverflowAttendees;
+
+
                         $scope.servicesAreFull = $scope.firstServiceAttendees >= $scope.maxAttendance && $scope.secondServiceAttendees >= $scope.maxAttendance;
+                        $scope.overflowIsFull = $scope.firstServiceOverflowAttendees >= $scope.overflowMaxAttendance && $scope.secondServiceOverflowAttendees >= $scope.overflowMaxAttendance;
+
+                        $scope.mostFull = function() {
+                            if ($scope.firstServiceLeft == 0 || $scope.secondServiceLeft == 0) {
+                                return (Math.max($scope.firstServiceLeft, $scope.secondServiceLeft));
+                            } else {
+                                return (Math.min($scope.firstServiceLeft, $scope.secondServiceLeft));
+                            }
+                        }
+                        $scope.mostOverflowFull = function() {
+                            if ($scope.firstServiceOverflowLeft == 0 || $scope.secondServiceOverflowLeft == 0) {
+                                return (Math.max($scope.firstServiceOverflowLeft, $scope.secondServiceOverflowLeft));
+                            } else {
+                                return (Math.min($scope.firstServiceOverflowLeft, $scope.secondServiceOverflowLeft));
+                            }
+                        }
                     }
                 }]
             };
