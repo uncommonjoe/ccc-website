@@ -1,12 +1,12 @@
 <div class="row">
     <div class="col-12 offset-0 col-md-8 offset-md-2">
         <h2 class="mb-0">Service Signup</h2>
-        <h5 class="sans-serif text-muted mb-3">Sunday May 17{{sunday | date : "EEEE, MMM d"}}</h5>
+        <h5 class="sans-serif text-muted mb-3">{{sunday | date : "EEEE, MMM d"}}</h5>
     </div>
 </div>
 
 <div class="row">
-    <div class="col-12 offset-0 col-md-4 offset-md-2">
+    <div class="col-12 offset-0 col-md-4 offset-md-2 mb-5">
         <div class="alert alert-warning" ng-show="servicesAreFull && !overflowIsFull">
             <strong>Overflow Seating Only!</strong> All seats for both services have been filled for this coming Sunday but we do have just a few left in the overflow.
         </div>
@@ -15,7 +15,7 @@
         room.
     </div>
 
-    <div class="col-12 offset-0 col-sm-4">
+    <div class="col-12 offset-0 col-md-4">
 
         <form name="serviceSignup" class="needs-validation" data-ng-submit="serviceSignup.$valid && submit()" data-ng-hide="confirmed || servicesAreFull && overflowIsFull" novalidate>
             <div class="form-group has-feedback">
