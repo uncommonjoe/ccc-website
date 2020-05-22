@@ -76,20 +76,11 @@ $pageNumber = 2017;
 		<div class="page-content" id="serviceSignup">
 			<div class="padding-xxl-top padding-xxl-bottom">
 				<div class="container px-5">
-					<div class="row">
-						<div class="col-12 pl-4 a-fade-up">
-							<h2 class="text-center mb-0">Service Signup</h2>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="col-12 offset-0 col-sm-10 offset-sm-1 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
-							<service-signup></service-signup>
-						</div>
-					</div>
+					<service-signup></service-signup>
 				</div>
 			</div>
-		<?php endif;?>
+		</div>
+	<?php endif;?>
 
 	<div class="page-content">
 		<div class="gray-area padding-xxl-top padding-xxl-bottom">
