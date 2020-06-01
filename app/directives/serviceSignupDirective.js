@@ -7,6 +7,7 @@ angular.module('ccc')
                 //templateUrl: '../wp-content/themes/cornerstone-community-church/app/directives/serviceSignupDirective.html',
                 controller: ['$scope', function($scope) {
 
+
                     // Times are set in attendees-set.php as well
                     $scope.firstServiceValue = "8:30 AM";
                     $scope.secondServiceValue = "10:30 AM";
@@ -26,8 +27,10 @@ angular.module('ccc')
                     $scope.confirmed = false;
                     $scope.isLoading = true;
 
-                    $scope.signup = {}
-                    $scope.signup.people = 1;
+                    $scope.signup = {
+                        people: 1
+                    }
+
                     $scope.submit = submit;
                     $scope.updateMaxValue = updateMaxValue;
 

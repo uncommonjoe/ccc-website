@@ -7,6 +7,7 @@
     $email = $form_data->email;
     $time = $form_data->time;
     $people = $form_data->people;
+    $kindergarden = $form_data->kindergarden;
 
 	if($time == "8:30 AM") {
 		$firstPeople = $people;
@@ -37,8 +38,24 @@
 	
 	$query = $wpdb->prepare("
 		INSERT INTO `wp_service_attendees`
-		(name, email, firstService, secondService, firstServiceOverflow, secondServiceOverflow)
-	 	VALUES ('$name', '$email', $firstPeople, '$secondPeople', '$firstOverflowPeople', '$secondOverflowPeople')
+		(
+			name, 
+			email,
+			kindergarden,
+			firstService, 
+			secondService, 
+			firstServiceOverflow, 
+			secondServiceOverflow
+		)
+	 	VALUES (
+			 '$name', 
+			 '$email', 
+			 '$kindergarden', 
+			 '$firstPeople', 
+			 '$secondPeople', 
+			 '$firstOverflowPeople', 
+			 '$secondOverflowPeople'
+		)
 	 ");
 
 	$wpdb->query($query);
@@ -46,7 +63,9 @@
 	$query = $wpdb->prepare("
 		SELECT 
 			SUM(firstService) AS firstService,
-			SUM(secondService) AS secondService
+			SUM(secondService) AS secondService,
+			SUM(firstServiceOverflow) AS firstServiceOverflow,
+			SUM(secondServiceOverflow) AS secondServiceOverflow
 			FROM `wp_service_attendees`
 			WHERE 1
 		");

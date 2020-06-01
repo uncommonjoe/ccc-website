@@ -16,7 +16,6 @@
     </div>
 
     <div class="col-12 offset-0 col-md-4">
-
         <form name="serviceSignup" class="needs-validation" data-ng-submit="serviceSignup.$valid && submit()" data-ng-hide="confirmed || servicesAreFull && overflowIsFull" novalidate>
             <div class="form-group has-feedback">
                 <label for="name">Your Name&nbsp;<span class="text-danger">*</span></label>
@@ -68,12 +67,12 @@
                             ng-change="updateMaxValue()" required>
 
                         <label class="custom-control-label" for="firstServiceOverflow">
-                    {{firstServiceOverflowValue}}
-                    <span class="badge small" ng-class="firstServiceOverflowAttendees >= overflowAttendanceWarning && firstServiceOverflowLeft > 0 ? 'badge-warning' : 'badge-secondary'" ng-hide="firstServiceOverflowAttendees >= overflowMaxAttendance">
-                        {{firstServiceOverflowLeft}} left
-                    </span>
-                    <span class="badge badge-danger small" ng-show="firstServiceOverflowAttendees >= overflowMaxAttendance">Full</span>
-                </label>
+                            {{firstServiceOverflowValue}}
+                            <span class="badge small" ng-class="firstServiceOverflowAttendees >= overflowAttendanceWarning && firstServiceOverflowLeft > 0 ? 'badge-warning' : 'badge-secondary'" ng-hide="firstServiceOverflowAttendees >= overflowMaxAttendance">
+                                {{firstServiceOverflowLeft}} left
+                            </span>
+                            <span class="badge badge-danger small" ng-show="firstServiceOverflowAttendees >= overflowMaxAttendance">Full</span>
+                        </label>
                     </div>
                 </div>
 
@@ -83,12 +82,12 @@
                         <input type="radio" id="secondServiceOverflow" name="service" data-ng-model="signup.time" ng-value="secondServiceOverflowValue" class="custom-control-input" ng-class="{'is-invalid' : serviceSignup.service.$error.required && serviceSignup.$submitted}"
                             ng-disabled="secondServiceOverflowAttendees >= overflowMaxAttendance || isLoading" ng-change="updateMaxValue()" required>
                         <label class="custom-control-label" for="secondServiceOverflow">
-                    {{secondServiceOverflowValue}}
-                    <span class="badge small" ng-class="secondServiceOverflowAttendees >= overflowAttendanceWarning && secondServiceOverflowLeft > 0 ? 'badge-warning' : 'badge-secondary'" ng-hide="secondServiceOverflowAttendees >= overflowMaxAttendance">
-                        {{secondServiceOverflowLeft}} left
-                    </span>
-                    <span class="badge badge-danger small" ng-show="secondServiceOverflowAttendees >= overflowMaxAttendance">Full</span>
-                </label>
+                            {{secondServiceOverflowValue}}
+                            <span class="badge small" ng-class="secondServiceOverflowAttendees >= overflowAttendanceWarning && secondServiceOverflowLeft > 0 ? 'badge-warning' : 'badge-secondary'" ng-hide="secondServiceOverflowAttendees >= overflowMaxAttendance">
+                                {{secondServiceOverflowLeft}} left
+                            </span>
+                            <span class="badge badge-danger small" ng-show="secondServiceOverflowAttendees >= overflowMaxAttendance">Full</span>
+                        </label>
                     </div>
                 </div>
 
@@ -102,10 +101,17 @@
                 <div class="invalid-feedback">Please enter up to {{maxLength}} people.</div>
             </div>
 
+            <div class="form-group">
+                <div class="from-check custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" ng-model="signup.kindergarden" id="customCheck1">
+                    <label class="custom-control-label" for="customCheck1">We have kindergarden age or younger attending childrens church</label>
+                </div>
+            </div>
+
             <button type="submit" class="btn btn-primary btn-lg px-5" ng-disabled="isLoading">
-        <span ng-hide="isLoading">Signup</span>
-        <span ng-show="isLoading">Sending...</span>
-    </button>
+                <span ng-hide="isLoading">Signup</span>
+                <span ng-show="isLoading">Sending...</span>
+            </button>
         </form>
 
         <div class="alert alert-danger" ng-show="servicesAreFull && overflowIsFull">

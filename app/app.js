@@ -1,5 +1,7 @@
 angular.module('ccc')
 
-.run(['$rootScope', function($rootScope) {
+.constant('_', window._)
 
+.run(['$rootScope', function($rootScope) {
+    $rootScope._ = window._;
 }])

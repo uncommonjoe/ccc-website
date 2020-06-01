@@ -1,11 +1,13 @@
 angular.module('ccc')
-    .controller('signupListController', ['$http',
-        function($http, ) {
+    .controller('signupListController', ['$http', '_',
+        function($http, _) {
             var vm = this;
 
             vm.isLoading = true;
             vm.deleteSignup = deleteSignup;
-            vm.swapServices = swapServices;
+            vm.sort = sort;
+
+            vm.filter = 'all';
 
             initial();
 
@@ -20,7 +22,6 @@ angular.module('ccc')
                 var request = $http(config);
                 request.then(function(response) {
                     vm.attendees = response.data;
-                    console.log(vm.attendees);
                     vm.isLoading = false;
                 });
             }
@@ -44,23 +45,18 @@ angular.module('ccc')
                 });
             }
 
-            function swapServices(id) {
-                vm.isLoading = true;
+            function sort(type) {
+                vm.filter = type;
 
-                var config = {
-                    method: 'POST',
-                    url: '/attendees-swap',
-                    //url: '/cornerstone/attendees-swap',
-                    data: id,
-                };
-
-                var request = $http(config);
-                request.then(function(response) {
-                    vm.swapped = response.data;
+                if (type == 'all') {
+                    vm.isLoading = true;
 
                     initial();
-                    vm.isLoading = false;
-                });
+                } else {
+                    vm.attendees = _.filter(vm.attendees, function(o) {
+                        return o.kindergarden == 1;
+                    });
+                }
             }
         }
     ]);

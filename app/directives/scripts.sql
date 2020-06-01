@@ -5,12 +5,21 @@ CREATE TABLE `wp_service_attendees` (
     `id` INT(5) AUTO_INCREMENT PRIMARY KEY,
     `name` VARCHAR(25) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
     `email` VARCHAR(30) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+    `kindergarden` TINYINT(1) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
     `firstService` INT(2) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
     `secondService` INT(2) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
     `firstServiceOverflow` INT(2) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
     `secondServiceOverflow` INT(2) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0'
 );
-INSERT INTO `wp_service_attendees`(`id`, `name`,`firstService`, `secondService`,`firstServiceOverflow`, `secondServiceOverflow`) VALUES (1,'INITIAL RESET',0,0,0,0);
+INSERT INTO `wp_service_attendees`
+    (`id`,
+     `name`,
+     `kindergarden`,
+     `firstService`,
+     `secondService`, 
+     `firstServiceOverflow`,
+     `secondServiceOverflow`)
+      VALUES (1,'INITIAL RESET',0,0,0,0,0);
 SELECT * FROM `wp_service_attendees` WHERE 1;
 
 
