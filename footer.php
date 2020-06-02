@@ -79,7 +79,7 @@
 
 		<script src="<?php echo get_template_directory_uri(); ?>/app/controllers/theDailyController.js?v2.1.5"></script>
 		<script src="<?php echo get_template_directory_uri(); ?>/app/controllers/signupListController.js?v1.2.3"></script>
-		<script src="<?php echo get_template_directory_uri(); ?>/app/directives/serviceSignupDirective.js?v1.2.4"></script>
+		<script src="<?php echo get_template_directory_uri(); ?>/app/directives/serviceSignupDirective.js?v1.2.5"></script>
 
         <script src="<?php echo get_template_directory_uri(); ?>/js/scripts_v2.min.js?v2.1.1"></script>
 
