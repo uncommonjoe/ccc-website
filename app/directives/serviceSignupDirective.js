@@ -21,7 +21,7 @@ angular.module('ccc')
 
                     $scope.maxAttendance = 90;
                     $scope.attendanceWarning = $scope.maxAttendance - 15;
-                    $scope.overflowMaxAttendance = 25;
+                    $scope.overflowMaxAttendance = 45;
                     $scope.overflowAttendanceWarning = $scope.overflowMaxAttendance - 15;
 
                     $scope.confirmed = false;
