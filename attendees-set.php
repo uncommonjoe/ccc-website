@@ -39,7 +39,8 @@
 	$query = $wpdb->prepare("
 		INSERT INTO `wp_service_attendees`
 		(
-			name, 
+			name,
+			time,
 			email,
 			kindergarden,
 			firstService, 
@@ -48,12 +49,13 @@
 			secondServiceOverflow
 		)
 	 	VALUES (
-			 '$name', 
-			 '$email', 
-			 '$kindergarden', 
-			 '$firstPeople', 
-			 '$secondPeople', 
-			 '$firstOverflowPeople', 
+			 '$name',
+			 CURRENT_TIMESTAMP(),
+			 '$email',
+			 '$kindergarden',
+			 '$firstPeople',
+			 '$secondPeople',
+			 '$firstOverflowPeople',
 			 '$secondOverflowPeople'
 		)
 	 ");

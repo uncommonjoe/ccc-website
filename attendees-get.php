@@ -13,7 +13,7 @@
 		(SELECT SUM(secondServiceOverflow) FROM `wp_service_attendees`) AS sumSecondServiceOverflow,
 		CURDATE() + INTERVAL 6 - weekday(CURDATE()) DAY AS sunday
 		FROM `wp_service_attendees`
-		WHERE 1
+		WHERE `expired` IS NULL
 		");
 
 	$results = $wpdb->get_results($query);
