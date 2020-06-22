@@ -101,12 +101,7 @@ body.pace-done {
     overflow: auto;
 }
 
-.pace-done #loader,
-.page-header h1,
-#welcome h1 div,
-#top-nav .logo,
-#top-nav ul,
-.home #welcome a.scroll {
+.pace-done #loader, .page-header, #alert-message, .page-header h1, #welcome h1 div, #top-nav .logo, #top-nav ul, .home #welcome a.scroll {
     opacity: 0;
 }
 
@@ -116,6 +111,9 @@ body.pace-done {
 }
 
 .pace-done {
+    .page-header, #alert-message {
+        opacity: 1;
+    }
     #loader * {
         transition: 1s;
         height: 0;
