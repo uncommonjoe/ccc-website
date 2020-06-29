@@ -7,13 +7,34 @@
 
 	$query = $wpdb->prepare("
 		SELECT *,
-		(SELECT SUM(firstService) FROM `wp_service_attendees`) as sumFirstService,
-		(SELECT SUM(secondService) FROM `wp_service_attendees`) AS sumSecondService,
-		(SELECT SUM(firstServiceOverflow) FROM `wp_service_attendees`) as sumFirstServiceOverflow,
-		(SELECT SUM(secondServiceOverflow) FROM `wp_service_attendees`) AS sumSecondServiceOverflow,
-		CURDATE() + INTERVAL 6 - weekday(CURDATE()) DAY AS sunday
-		FROM `wp_service_attendees`
-		WHERE `expired` IS NULL
+		(SELECT 
+			SUM(firstService)
+				FROM `wp_service_attendees`
+				WHERE `expired` IS NULL)
+				AS `sumFirstService`,
+			
+		(SELECT
+			SUM(secondService)
+				FROM `wp_service_attendees`
+				WHERE `expired` IS NULL)
+				AS `sumSecondService`,
+		
+		(SELECT
+			SUM(firstServiceOverflow)
+				FROM `wp_service_attendees`
+				WHERE `expired` IS NULL)
+				AS `sumFirstServiceOverflow`,
+
+		(SELECT
+			SUM(secondServiceOverflow)
+				FROM `wp_service_attendees`
+				WHERE `expired` IS NULL)
+				AS `sumSecondServiceOverflow`,
+				
+				CURDATE() + INTERVAL 6 - weekday(CURDATE()) DAY
+				AS sunday
+			FROM `wp_service_attendees`
+			WHERE `expired` IS NULL;
 		");
 
 	$results = $wpdb->get_results($query);

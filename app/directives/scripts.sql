@@ -31,7 +31,7 @@ SELECT * FROM `wp_service_attendees` WHERE 1;
 
 -- AUTO ARCHIVE
 
-SET GLOBAL event_scheduler = ON;
+SET GLOBAL event_scheduler = ON
 
 CREATE EVENT archive
     ON SCHEDULE

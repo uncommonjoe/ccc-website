@@ -16,6 +16,7 @@ get_header();
 
 	<div class="page-content">
 		<div class="container-fluid px-5 padding-lg-top padding-xxl-bottom">
+
 			<div class="row">
 				<div class="col-12 col-xl-9 offset-xl-1">
 					<div class="row text-center mb-5">
@@ -78,7 +79,7 @@ get_header();
 
 										<td class="font-sm align-middle text-center">
 											<div ng-show="attendee.kindergarden == 1">
-												<span class="d-inline d-lg-none">Childrens Church</span>
+												<span class="d-inline d-md-none">Childrens Church</span>
 
 												<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="11.43" height="16" viewBox="0 0 20 28">
 													<path d="M18.562 8.563l-4.562 4.562v12.875c0 0.969-0.781 1.75-1.75 1.75s-1.75-0.781-1.75-1.75v-6h-1v6c0 0.969-0.781 1.75-1.75 1.75s-1.75-0.781-1.75-1.75v-12.875l-4.562-4.562c-0.578-0.594-0.578-1.531 0-2.125 0.594-0.578 1.531-0.578 2.125 0l3.563 3.563h5.75l3.563-3.563c0.594-0.578 1.531-0.578 2.125 0 0.578 0.594 0.578 1.531 0 2.125zM13.5 6c0 1.937-1.563 3.5-3.5 3.5s-3.5-1.563-3.5-3.5 1.563-3.5 3.5-3.5 3.5 1.563 3.5 3.5z"></path>
@@ -88,29 +89,33 @@ get_header();
 
 										<td class="font-sm align-middle">
 											<div ng-if="attendee.firstService != 0">
-												<span class="d-inline d-lg-none">1st Service</span>
+												<span class="d-inline d-md-none">1st Service</span>
 												<span>{{attendee.firstService}}</span>
 										</td>
 
 										<td class="font-sm align-middle">
 											<div ng-if="attendee.secondService != 0">
-												<span class="d-inline d-lg-none">2nd Service</span>
+												<span class="d-inline d-md-none">2nd Service</span>
 												<span>{{attendee.secondService}}</span>
 											</div>
 										</td>
 
 										<td class="font-sm align-middle">
 											<div ng-if="attendee.firstServiceOverflow != 0">
-												<span class="d-inline d-lg-none">1st Overflow</span>
+												<span class="d-inline d-md-none">1st Overflow</span>
 												<span>{{attendee.firstServiceOverflow}}</span>
 											</div>
 										</td>
 
 										<td class="font-sm align-middle">
 											<div ng-if="attendee.secondServiceOverflow != 0">
-												<span class="d-inline d-lg-none">2nd Overflow</span>
+												<span class="d-inline d-md-none">2nd Overflow</span>
 												<span>{{attendee.secondServiceOverflow}}</span>
 											</div>
+										</td>
+
+										<td class="font-sm align-middle d-table-cell d-md-none font-color-gray font-size-xs">
+											{{attendee.time}}
 										</td>
 
 										<td class="text-right delete-button">
@@ -133,6 +138,11 @@ get_header();
 						</div>
 					</div>
 
+					<div class="row mt-5">
+						<div class="col-12 col-xl-9 offset-xl-1 font-size-xs">
+							<em>The data in this list automatically clears at 12:00 PM each Sunday afternoon. The data is not permanently deleted so if there is a discrepancy or issue contact Joe and he can resolve it.</em>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

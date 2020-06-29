@@ -2,6 +2,8 @@ angular.module('ccc')
     .controller('signupListController', ['$http', '_',
         function($http, _) {
             var vm = this;
+            var url = '/';
+            //var url = '/cornerstone/';
 
             vm.isLoading = true;
             vm.deleteSignup = deleteSignup;
@@ -15,8 +17,7 @@ angular.module('ccc')
                 vm.isLoading = true;
                 var config = {
                     method: 'POST',
-                    url: '/attendees-get',
-                    //url: '/cornerstone/attendees-get',
+                    url: url + 'attendees-get',
                 };
 
                 var request = $http(config);
@@ -31,8 +32,7 @@ angular.module('ccc')
 
                 var config = {
                     method: 'POST',
-                    url: '/attendees-delete',
-                    //url: '/cornerstone/attendees-delete',
+                    url: url + '/attendees-delete',
                     data: id,
                 };
 

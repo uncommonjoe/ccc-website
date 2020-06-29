@@ -7,6 +7,8 @@ angular.module('ccc')
                 //templateUrl: '../wp-content/themes/cornerstone-community-church/app/directives/serviceSignupDirective.html',
                 controller: ['$scope', function($scope) {
 
+                    var url = '/';
+                    //var url = '/cornerstone/';
 
                     // Times are set in attendees-set.php as well
                     $scope.firstServiceValue = "8:30 AM";
@@ -40,8 +42,7 @@ angular.module('ccc')
                         // Checking database for Sunday signups
                         var config = {
                             method: 'POST',
-                            url: '/attendees-get',
-                            //url: '/cornerstone/attendees-get',
+                            url: url + 'attendees-get',
                             data: '',
                         };
 
@@ -101,8 +102,7 @@ angular.module('ccc')
                         // Submit signup to database
                         var config = {
                             method: 'POST',
-                            url: '/attendees-set',
-                            //url: '/cornerstone/attendees-set',
+                            url: url + 'attendees-set',
                             data: $scope.signup,
                         };
 
