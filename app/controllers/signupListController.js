@@ -32,7 +32,7 @@ angular.module('ccc')
 
                 var config = {
                     method: 'POST',
-                    url: url + '/attendees-delete',
+                    url: url + 'attendees-delete',
                     data: id,
                 };
 
