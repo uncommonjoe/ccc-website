@@ -1,11 +1,10 @@
 <?php
-
 	/* Template Name: GET Attendees */
 	// Create page with this file as the template
 
 	global $wpdb;
 
-	$query = $wpdb->prepare("
+	$query = $wpdb->get_results("
 		SELECT *,
 		(SELECT 
 			SUM(firstService)
@@ -37,10 +36,9 @@
 			WHERE `expired` IS NULL;
 		");
 
-	$results = $wpdb->get_results($query);
 
-	if($results){
-		echo json_encode($results);
+	if($query){
+		echo json_encode($query);
 	}
 	else {
 		$wpdb->print_error();

@@ -72,6 +72,18 @@ $pageNumber = 2017;
 		</div>
 	</div>
 
+	<?php if(get_field('letter_active', $pageNumber)) :?>
+		<div class="page-content" id="serviceSignup">
+			<div class="gray-area padding-xxl-top padding-xxl-bottom">
+				<div class="container px-5">
+					<div class="col-12 col-lg-7 offset-lg-2">
+						<?php the_field('letter', $pageNumber) ?>
+					</div>
+				</div>
+			</div>
+		</div>
+	<?php endif; ?>
+
 	<?php if(get_field('sunday_signup_contact_form', $pageNumber)) : ?>
 		<div class="page-content" id="serviceSignup">
 			<div class="padding-xxl-top padding-xxl-bottom">

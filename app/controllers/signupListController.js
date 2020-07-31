@@ -7,6 +7,7 @@ angular.module('ccc')
 
             vm.isLoading = true;
             vm.deleteSignup = deleteSignup;
+            vm.expireList = expireList;
             vm.sort = sort;
 
             vm.filter = 'all';
@@ -45,6 +46,24 @@ angular.module('ccc')
                 });
             }
 
+            function expireList() {
+                vm.isLoading = true;
+
+                var config = {
+                    method: 'POST',
+                    url: url + 'attendees-delete',
+                    data: 'expire',
+                };
+
+                var request = $http(config);
+                request.then(function(response) {
+                    vm.expired = response.data;
+
+                    initial();
+                    vm.isLoading = false;
+                });
+            }
+
             function sort(type) {
                 vm.filter = type;
 
@@ -59,4 +78,4 @@ angular.module('ccc')
                 }
             }
         }
-    ]);
+    ])

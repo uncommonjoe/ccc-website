@@ -41,13 +41,13 @@ get_header();
 						</div>
 					</div>
 
-					<div class="row">
-						<div class="col-12 mb-3">
+					<div class="row mb-3">
+						<div class="col-12">
 							<div class="btn-group btn-group-toggle" data-toggle="buttons">
-								<label class="btn btn-warning btn-sm" ng-class="{'active' : vm.filter == 'all'}" ng-click="vm.sort('all')">
+								<label class="btn btn-warning btn-sm" ng-class="{'active' : vm.filter == 'all'}" ng-click="vm.sort('all')" ng-disabled="vm.isLoading">
 									<input type="radio" name="options" id="option1" autocomplete="off" > Show All
 								</label>
-								<label class="btn btn-warning btn-sm" ng-class="{'active' : vm.filter == 'kindergarden'}" ng-click="vm.sort('kindergarden')">
+								<label class="btn btn-warning btn-sm" ng-class="{'active' : vm.filter == 'kindergarden'}" ng-click="vm.sort('kindergarden')" ng-disabled="vm.isLoading">
 									<input type="radio" name="options" id="option2" autocomplete="off"> Children
 								</label>
 							</div>
@@ -70,7 +70,11 @@ get_header();
 								</thead>
 
 								<tbody class="table-striped">
-									<tr ng-repeat="attendee in vm.attendees" title="{{attendee.time}}">
+									<tr ng-show="vm.attendees.length == 1">
+										<td colspan="5">No attendees yet</td>
+									</tr>
+
+									<tr ng-repeat="attendee in vm.attendees" title="{{attendee.time}}"  ng-hide="attendee.id == 1">
 										<td class="font-sm align-middle">
 											<div>
 												<a href="mailto:{{attendee.email}}">{{attendee.name}}</a>
@@ -119,28 +123,30 @@ get_header();
 										</td>
 
 										<td class="text-right delete-button">
-											<!-- <button type="button" class="btn btn-primary btn-sm font-sm px-4 py-2 mr-3" ng-click="vm.swapServices(attendee.id)" ng-disabled="vm.isLoading">Swap Services</button> -->
-											<button type="button" class="btn btn-danger btn-sm font-sm px-4 py-2" ng-click="vm.deleteSignup(attendee.id)" ng-disabled="vm.isLoading">Delete</button>
+											<button type="button" class="btn btn-danger btn-sm font-sm px-4 py-2" ng-confirm-click="Delete is permanent and removes this entry completely and is irreversible. Are you sure you would like to delete this record?" confirmed-click="vm.deleteSignup(attendee.id)" ng-disabled="vm.isLoading">Delete</button>
 										</td> 
 									</tr>
 								</tbody>
 
-								<tfoot>
+								<tfoot ng-hide="vm.attendees.length == 1">
 									<tr>
-									<td colspan="3" class="font-sm align-middle text-right font-800">Totals</td>
+									<td colspan="2" class="font-sm align-middle text-right font-800">Totals</td>
 									<td class="font-sm align-middle font-800">{{vm.attendees[0].sumFirstService}}</td>
 									<td class="font-sm align-middle font-800">{{vm.attendees[0].sumSecondService}}</td>
 									<td class="font-sm align-middle font-800">{{vm.attendees[0].sumFirstServiceOverflow}}</td>
 									<td class="font-sm align-middle font-800">{{vm.attendees[0].sumSecondServiceOverflow}}</td>
 									<td></td>
+									</tr>
 								</tfoot>
 							</table>
 						</div>
 					</div>
 
 					<div class="row mt-5">
-						<div class="col-12 col-xl-9 offset-xl-1 font-size-xs">
-							<em>The data in this list automatically clears at 12:00 PM each Sunday afternoon. The data is not permanently deleted so if there is a discrepancy or issue contact Joe and he can resolve it.</em>
+						<div class="col-12 font-size-xs">
+							<button type="button" class="btn btn-danger" ng-confirm-click="Are you sure to expire all records?" confirmed-click="vm.expireList()" ng-disabled="vm.isLoading">Expire List</button>
+
+							<p class="mt-3"><em>Expire list clears this list and is to be used<br />to reset the form manually after each Sunday.</em></p>
 						</div>
 					</div>
 				</div>

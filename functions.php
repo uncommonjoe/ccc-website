@@ -1,7 +1,7 @@
 <?php
 
 /* Theme setup */
-add_action( 'after_setup_theme', 'wpt_setup' );
+//add_action( 'after_setup_theme', 'wpt_setup' );
 
 // Register Menu
 register_nav_menus( array(

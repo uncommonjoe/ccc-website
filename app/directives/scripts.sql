@@ -43,8 +43,16 @@ CREATE EVENT archive
 
 -- END AUTO ARCHIVE
 
+-- Change expired to unexpired (null)
+UPDATE `wp_service_attendees` 
+    SET `expired` = NULL
+        WHERE (
+            `id` > 1 AND
+            `time`>='2020-06-29' AND
+            `time`< '2020-07-02'
+        
 
-
+   
 INSERT INTO `wp_service_attendees`
     (`id`,
      `name`,

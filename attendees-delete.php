@@ -3,23 +3,44 @@
 	/* Template Name: DELETE Attendee */
 	// Create page with this file as the template
 
-	$id = json_decode(file_get_contents("php://input"));
+	$form_data = json_decode(file_get_contents("php://input"));
 
 	global $wpdb;
 
-	$query = $wpdb->prepare("
-		DELETE FROM `wp_service_attendees`
-		WHERE `wp_service_attendees`.`id` = $id
+	$database = 'wp_service_attendees';
+	$currentTime = current_time('mysql');
+
+	if($form_data === null){
+
+		$get_ids = $wpdb->get_col("
+			SELECT id
+			FROM $database
+			WHERE (`id` > 1 AND `expired` IS NULL)
 		");
-
-	$results = $wpdb->get_results($query);
-
-	if($results){
-		$data = "success";
-	}
-	else { 
-		$data = "error";
-	}
 	
-	echo json_encode($data);
+		foreach($get_ids as $key => $value){
+			$data = array('expired' => $currentTime);
+			$where = array('id' => $value);
+
+			$wpdb->update(
+				$database,
+				$data,
+				$where,
+			);
+
+			print_r( $where );
+		}		
+	}
+
+	else {
+  		$wpdb->delete(
+			$database,
+			array(
+				'id' => $form_data
+				)
+		);
+	}
+
+	echo $ids;
+
 ?>
