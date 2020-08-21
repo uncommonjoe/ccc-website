@@ -3,7 +3,9 @@
 
 get_header();
 
-$pageNumber = 2017;
+$testPageNumber = 2017;
+//$testPageNumber = 2316;
+$pageNumber = $testPageNumber;
 ?>
 
 <div class="page-wrap" data-ng-controller="theDailyController as vm">
@@ -152,18 +154,22 @@ $pageNumber = 2017;
 
 				<div class="col-12 col-md-8 order-1 order-md-2 mb-5">
 					<div class="pin" id="latest_sermon">
-						<?php if(get_field('sunday_service_custom_video', $pageNumber)) : ?>
+					<?php if(get_field('sunday_service_custom_video', $pageNumber)) : ?>
 							<div class="plyr plyr--full-ui plyr--video plyr--youtube plyr--fullscreen-enabled plyr--paused plyr--stopped plyr__poster-enabled">
 								<div class="plyr__video-wrapper plyr__video-embed">
 									<iframe width="560" height="315" src="https://www.youtube.com/embed/<?php the_field('sunday_service_custom_video', $pageNumber); ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 								</div>
 							</div>
-						<?php else: ?>
+						
+						<?php elseif(!get_field('sunday_service_custom_video', $pageNumber) && !get_field('swap_last_sunday_video_with_graphic', $pageNumber)): ?>
 							<?php if ($latest_sermon->have_posts()) : while ($latest_sermon->have_posts()) : $latest_sermon->the_post(); global $post; ?> 
 								<div class="wpfc-sermon-single-video wpfc-sermon-single-video-link">
 									<?php echo wpfc_render_video( get_wpfc_sermon_meta( 'sermon_video_link' ) ); ?>
 								</div>
 							<?php endwhile; endif; ?>
+						
+						<?php elseif(get_field('swap_last_sunday_video_with_graphic', $pageNumber) && !get_field('sunday_service_custom_video', $pageNumber)) : ?>
+							<img src="<?php echo get_field('upcoming_service_graphic', $pageNumber) ?>" alt="" />
 						<?php endif; ?>
 					</div>
 				</div>
@@ -204,34 +210,38 @@ $pageNumber = 2017;
 			</div>
 		</div>
 
-		<div class="container px-5 padding-xxl-top padding-xxl-bottom">
-			<div class="row">
-				<div class="col-12 col-md-5 text-center mb-5 a-fade-up">
-					<img class="section-img" src="<?php the_field('cornerstone_kids_img', $pageNumber) ?>" alt="<?php the_field('cornerstone_kids_title') ?>" style="height:200px;width: auto;object-fit:unset;" />
-				</div>
-
-				<div class="col-12 col-md-7">
-					<h2 class="a-fade-up delay-2"><?php the_field('cornerstone_kids_title', $pageNumber) ?></h2>
-
-					<div class="a-fade-up delay-2"><?php the_field('cornerstone_kids_paragraph', $pageNumber) ?></div>
-				</div>
-			</div>
-		</div>
-
-		<div class="gray-area padding-xxl-top padding-xxl-bottom">
-			<div class="container px-5">
+		<?php if(get_field('is_kids_section_active', $pageNumber)) : ?>
+			<div class="container px-5 padding-xxl-top padding-xxl-bottom">
 				<div class="row">
-					<div class="col-12 col-md-5 mb-5 text-center a-fade-up">
-						<img class="section-img" src="<?php the_field('c3_img', $pageNumber) ?>" alt="<?php the_field('c3_title') ?>" style="width: 100%;height: auto;min-height: unset; max-width: unset;" />
+					<div class="col-12 col-md-5 text-center mb-5 a-fade-up">
+						<img class="section-img" src="<?php the_field('cornerstone_kids_img', $pageNumber) ?>" alt="<?php the_field('cornerstone_kids_title') ?>" style="height:200px;width: auto;object-fit:unset;" />
 					</div>
 
 					<div class="col-12 col-md-7">
-						<h2 class="a-fade-up delay-2"><?php the_field('c3_title', $pageNumber) ?></h2>
-						<div class="a-fade-up delay-2"><?php the_field('c3_paragraph', $pageNumber) ?></div>
+						<h2 class="a-fade-up delay-2"><?php the_field('cornerstone_kids_title', $pageNumber) ?></h2>
+
+						<div class="a-fade-up delay-2"><?php the_field('cornerstone_kids_paragraph', $pageNumber) ?></div>
 					</div>
 				</div>
 			</div>
-		</div>
+		<?php endif;?>
+
+		<?php if(get_field('is_c3_active', $pageNumber)) : ?>
+			<div class="gray-area padding-xxl-top padding-xxl-bottom">
+				<div class="container px-5">
+					<div class="row">
+						<div class="col-12 col-md-5 mb-5 text-center a-fade-up">
+							<img class="section-img" src="<?php the_field('c3_img', $pageNumber) ?>" alt="<?php the_field('c3_title') ?>" style="width: 100%;height: auto;min-height: unset; max-width: unset;" />
+						</div>
+
+						<div class="col-12 col-md-7">
+							<h2 class="a-fade-up delay-2"><?php the_field('c3_title', $pageNumber) ?></h2>
+							<div class="a-fade-up delay-2"><?php the_field('c3_paragraph', $pageNumber) ?></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		<?php endif;?>
 
 		<div class="padding-xxl-top padding-xxl-bottom">
 			<div class="container px-5">

@@ -1,11 +1,11 @@
 <?php
-/* Template Name: TEST The Daily */
+/* Template Name: The Daily */
 
 get_header();
 
+//$pageNumber = 2017;
 $testPageNumber = 2316;
 $pageNumber = $testPageNumber;
-//$pageNumber = 2017;
 ?>
 
 <div class="page-wrap" data-ng-controller="theDailyController as vm">
@@ -74,24 +74,27 @@ $pageNumber = $testPageNumber;
 		</div>
 	</div>
 
+	<?php if(get_field('letter_active', $pageNumber)) :?>
+		<div class="page-content" id="serviceSignup">
+			<div class="gray-area padding-xxl-top padding-xxl-bottom">
+				<div class="container px-5">
+					<div class="col-12 col-lg-7 offset-lg-2">
+						<?php the_field('letter', $pageNumber) ?>
+					</div>
+				</div>
+			</div>
+		</div>
+	<?php endif; ?>
+
 	<?php if(get_field('sunday_signup_contact_form', $pageNumber)) : ?>
 		<div class="page-content" id="serviceSignup">
 			<div class="padding-xxl-top padding-xxl-bottom">
 				<div class="container px-5">
-					<div class="row">
-						<div class="col-12 pl-4 a-fade-up">
-							<h2 class="text-center mb-0">Service Signup</h2>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="col-12 offset-0 col-sm-10 offset-sm-1 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
-							<service-signup></service-signup>
-						</div>
-					</div>
+					<service-signup></service-signup>
 				</div>
 			</div>
-		<?php endif;?>
+		</div>
+	<?php endif;?>
 
 	<div class="page-content">
 		<div class="gray-area padding-xxl-top padding-xxl-bottom">
@@ -157,12 +160,16 @@ $pageNumber = $testPageNumber;
 									<iframe width="560" height="315" src="https://www.youtube.com/embed/<?php the_field('sunday_service_custom_video', $pageNumber); ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 								</div>
 							</div>
-						<?php else: ?>
+						
+						<?php elseif(!get_field('sunday_service_custom_video', $pageNumber) && !get_field('swap_last_sunday_video_with_graphic', $pageNumber)): ?>
 							<?php if ($latest_sermon->have_posts()) : while ($latest_sermon->have_posts()) : $latest_sermon->the_post(); global $post; ?> 
 								<div class="wpfc-sermon-single-video wpfc-sermon-single-video-link">
 									<?php echo wpfc_render_video( get_wpfc_sermon_meta( 'sermon_video_link' ) ); ?>
 								</div>
 							<?php endwhile; endif; ?>
+						
+						<?php elseif(get_field('swap_last_sunday_video_with_graphic', $pageNumber) && !get_field('sunday_service_custom_video', $pageNumber)) : ?>
+							<img src="<?php echo get_field('upcoming_service_graphic', $pageNumber) ?>" alt="" />
 						<?php endif; ?>
 					</div>
 				</div>

@@ -4,11 +4,11 @@ angular.module('ccc')
             return {
                 restrict: 'E',
                 templateUrl: '../wp-content/themes/CCC/app/directives/serviceSignupDirective.html',
-                //templateUrl: '../wp-content/themes/cornerstone-community-church/app/directives/serviceSignupDirective.html',
+                templateUrl: '../wp-content/themes/cornerstone-community-church/app/directives/serviceSignupDirective.html',
                 controller: ['$scope', function($scope) {
 
-                    var url = '/';
-                    //var url = '/cornerstone/';
+                    //var url = '/';
+                    var url = '/cornerstone/';
 
                     // Times are set in attendees-set.php as well
                     $scope.firstServiceValue = "8:30 AM";
