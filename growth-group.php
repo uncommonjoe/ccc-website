@@ -48,7 +48,7 @@ get_header();
 
                             <div class="col-12 margin-md-top">
                                 <h6 class="serif font-spaced font-size-sm text-uppercase font-color-darker">Location</h6>
-                                <h5 class="sans-serif font-color-darker font-sm">TBD</h5>
+                                <h5 class="sans-serif font-color-darker font-sm">5708 Danford Road</h5>
                             </div>
 
                             <div class="col-12 margin-md-top">
@@ -57,7 +57,7 @@ get_header();
                             </div>
 
                             <div class="col-12 margin-md-top">
-                                <a href="mailto:exegete215@gmail.com" target="_blank"  class="btn btn-primary btn-block margin-md-top">Email David</a>
+                                <a href="https://cornerstonebillings.org/contact/" class="btn btn-primary btn-block margin-md-top">Contact</a>
                             </div>
                         </div>
                     </div>
@@ -93,7 +93,39 @@ get_header();
                             </div>
 
                             <div class="col-12 margin-md-top">
-                                <a href="mailto:rick.haluszka@gmail.com" target="_blank" class="btn btn-primary btn-block margin-md-top">Email Rick</a>
+                                <a href="https://cornerstonebillings.org/contact/" class="btn btn-primary btn-block margin-md-top">Contact</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-6">
+                    <div class="gg-container">
+                        <div class="row">
+                            <div class="col-12">
+                                <h6 class="serif font-spaced font-size-sm text-uppercase font-color-darker">Leader</h6>
+                                <h2 class="text-uppercase font-700 no-margin-bottom">Andy Metroka</h2>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12 margin-md-top">
+                                <h6 class="serif font-spaced font-size-sm text-uppercase font-color-darker">When</h6>
+                                <h5 class="sans-serif font-color-darker font-sm">Mondays, 6:30&nbsp;PM - 8:00&nbsp;PM</h5>
+                            </div>
+
+                            <div class="col-12 margin-md-top">
+                                <h6 class="serif font-spaced font-size-sm text-uppercase font-color-darker">Place</h6>
+                                <h5 class="sans-serif font-color-darker font-sm">5507 Billy Casper Drive</h5>
+                            </div>
+
+                            <div class="col-12 margin-md-top">
+                                <h6 class="serif font-spaced font-size-sm text-uppercase font-color-darker">Notes</h6>
+                                <h5 class="sans-serif font-color-darker font-sm">Kid Friendly</h5>
+                            </div>
+
+                            <div class="col-12 margin-md-top">
+                               <a href="https://cornerstonebillings.org/contact/" class="btn btn-primary btn-block margin-md-top">Contact</a>
                             </div>
                         </div>
                     </div>
@@ -115,7 +147,7 @@ get_header();
                         <div class="row">
                             <div class="col-12 margin-md-top">
                                 <h6 class="serif font-spaced font-size-sm text-uppercase font-color-darker">When</h6>
-                                <h5 class="sans-serif font-color-darker font-sm">Tuesday, 6:30&nbsp;PM - 8:00&nbsp;PM</h5>
+                                <h5 class="sans-serif font-color-darker font-sm">Tuesdays, 6:30&nbsp;PM - 8:00&nbsp;PM</h5>
                             </div>
 
                             <div class="col-12 margin-md-top">
@@ -129,7 +161,7 @@ get_header();
                             </div>
 
                             <div class="col-12 margin-md-top">
-                                <a href="mailto:metroka@mt.net" target="_blank" class="btn btn-primary btn-block margin-md-top">Email Andy</a>
+                               <a href="https://cornerstonebillings.org/contact/" class="btn btn-primary btn-block margin-md-top">Contact</a>
                             </div>
                         </div>
                     </div>
@@ -162,7 +194,7 @@ get_header();
                             </div>
 
                             <div class="col-12 margin-md-top">
-                                <a href="mailto:ken@rw360.org" target="_blank" class="btn btn-primary btn-block margin-md-top">Email Ken</a>
+                               <a href="https://cornerstonebillings.org/contact/" class="btn btn-primary btn-block margin-md-top">Contact</a>
                             </div>
                         </div>
                     </div>
@@ -184,7 +216,7 @@ get_header();
                         <div class="row">
                             <div class="col-12 margin-md-top">
                                 <h6 class="serif font-spaced font-size-sm text-uppercase font-color-darker">When</h6>
-                                <h5 class="sans-serif font-color-darker font-sm">Wednesday, 6:30&nbsp;PM - 8:00 PM</h5>
+                                <h5 class="sans-serif font-color-darker font-sm">Wednesdays, 6:30&nbsp;PM - 8:00 PM</h5>
                             </div>
 
                             <div class="col-12 margin-md-top">
@@ -198,13 +230,11 @@ get_header();
                             </div>
 
                             <div class="col-12 margin-md-top">
-                                <a href="mailto:romansjeff@gmail.com" target="_blank" class="btn btn-primary btn-block margin-md-top">Email Jeff</a>
+                               <a href="https://cornerstonebillings.org/contact/" class="btn btn-primary btn-block margin-md-top">Contact</a>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                
 
                 <div class="col-12 margin-lg-bottom margin-xl-top">
                     <h1>Men's Discipleship</h1>
@@ -236,7 +266,7 @@ get_header();
                             </div>
 
                             <div class="col-12 margin-md-top">
-                                <a href="mailto:steveglancey@gmail.com" target="_blank" class="btn btn-primary btn-block margin-md-top">Email Steve</a>
+                                <a href="https://cornerstonebillings.org/contact/" class="btn btn-primary btn-block margin-md-top">Contact</a>
                             </div>
                         </div>
                     </div>
