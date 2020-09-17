@@ -21,7 +21,7 @@
         <meta property="og:title" content="<?php echo wp_title(''); ?>" />
         <meta property="og:url" content="<?php echo get_page_link(); ?>" />
         
-        <link href="<?php echo get_template_directory_uri(); ?>/style.min.css?v.3.6" rel="stylesheet" type="text/css">
+        <link href="<?php echo get_template_directory_uri(); ?>/style.min.css?v.3.7" rel="stylesheet" type="text/css">
 
         <link rel="icon" type="image/png" sizes="512x512" href="<?php echo get_template_directory_uri(); ?>/img/favicon_teal.png">
         <link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri(); ?>/img/apple-icon.png">

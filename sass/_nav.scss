@@ -1,6 +1,20 @@
+    .home {
+        #header-nav {
+            top: 100px;    
+        }
+    }
+    
+    @media screen and (max-width: $device-sm){
+        .home {
+            #header-nav {
+                top: 120px;    
+            }
+        }
+    }
+
     #header-nav {
         position: absolute;
-        top: 100px;
+        top: 60px;
         left: 80px;
         right: 80px;
         z-index: 4;
