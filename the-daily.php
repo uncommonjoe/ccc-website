@@ -19,7 +19,7 @@ $pageNumber = $testPageNumber;
 							Sunday worship service is live now!
 						</span>
 						
-						<a class='btn btn-light inverse px-3 py-1 ml-3' style="color: white; border-color: white" href="https://www.youtube.com/channel/UC1Ynk4qAMEVc92G-t-RXmeg/live" target="_blank">
+						<a class='btn btn-light inverse px-3 py-1 ml-3' style="color: white; border-color: white" href="#live">
 							Watch live
 						</a>
 					</div>
@@ -175,7 +175,7 @@ $pageNumber = $testPageNumber;
 				</div>
 			</div>
 
-			<div class="row" ng-show="vm.isServiceLive">
+			<div class="row" ng-show="vm.isServiceLive" id="live">
 					<div class="col-12 text-center">						
 						<div class="plyr plyr--full-ui plyr--video plyr--youtube plyr--fullscreen-enabled plyr--paused plyr--stopped plyr__poster-enabled" style="height:auto;">
 							<div class="plyr__video-wrapper plyr__video-embed">
@@ -183,7 +183,7 @@ $pageNumber = $testPageNumber;
 							</div>
 						</div>
 
-						<div class="small mt-3">If you are having troubles viewing above, please go directly to <a href="https://www.youtube.com/channel/UC1Ynk4qAMEVc92G-t-RXmeg/live" target="_blank">our YouTube channel</a></div>
+						<div class="small mt-3">If you are having troubles viewing above, please go directly to <a href="https://www.youtube.com/CornerstoneCommunityChurchBillings/live" target="_blank">our YouTube channel</a></div>
 					</div>
 				</div>
 			<?php endif; ?>
