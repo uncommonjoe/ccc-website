@@ -65,54 +65,54 @@ body {
 }
 
 .font-color-darkest {
-    color: $color-darkest-gray !important;
+    color: $color-darkest-gray;
 }
 
 .font-color-dark {
-    color: $color-dark-gray !important;
+    color: $color-dark-gray;
 }
 
 .font-color-darker {
-    color: $color-darker-gray !important;
+    color: $color-darker-gray;
 }
 
 .font-color-gray {
-    color: $color-gray !important;
+    color: $color-gray;
 }
 
 .font-color-light {
-    color: $color-light-gray !important;
+    color: $color-light-gray;
 }
 
 .font-color-lightest {
-    color: $color-lightest-gray !important;
+    color: $color-lightest-gray;
 }
 
 
 /*** FONT SIZE ***/
 
 .font-size-xs {
-    font-size: $font-xs !important;
+    font-size: $font-xs;
 }
 
 .font-size-sm {
-    font-size: $font-sm !important;
+    font-size: $font-sm;
 }
 
 .font-size-md {
-    font-size: $font-md !important;
+    font-size: $font-md;
 }
 
 .font-size-lg {
-    font-size: $font-lg !important;
+    font-size: $font-lg;
 }
 
 .font-size-xl {
-    font-size: $font-xl !important;
+    font-size: $font-xl;
 }
 
 .font-size-xxl {
-    font-size: $font-xxl !important;
+    font-size: $font-xxl;
 }
 
 @media (max-width: $device-sm) {

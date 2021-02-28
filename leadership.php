@@ -87,6 +87,24 @@ get_header();
                         </div>
                     </div>
                 </div>
+				
+				 <div class="col-12">
+                    <div class="gg-container">
+                        <div class="row">
+                            <div class="col-12 col-md-4 col-xl-5">
+                                <img src="../../wp-content/uploads/2018/12/Kelly-David.jpg" alt="David Kelly" />
+                            </div>
+
+                            <div class="col-12 col-md-8 col-xl-7">
+                                <h1 class="text-uppercase font-700 no-margin-bottom">David<br/>Kelly</h1>
+
+                                <h6 class="serif font-spaced font-size-sm text-uppercase font-color-gray">Director of Growth Groups</h6>
+
+                                <p>David oversees the Growth Group Ministries at Cornerstone. He is married to Amanda and they have two children; Calista and Jace. David enjoys the pursuit of growing relationships in the church and pointing people to the truth of God’s word.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="row">
@@ -100,24 +118,6 @@ get_header();
                     <div class="gg-container">
                         <div class="row">
                             <div class="col-12 col-md-4 col-xl-5">
-                                <img src="../../wp-content/uploads/2018/12/Kelly-David.jpg" alt="David Kelly" />
-                            </div>
-
-                            <div class="col-12 col-md-8 col-xl-7">
-                                <h1 class="text-uppercase font-700 no-margin-bottom">David<br/>Kelly</h1>
-
-                                <h6 class="serif font-spaced font-size-sm text-uppercase font-color-gray">Director of Growth Groups</h6>
-
-                                <p>David is currently an elder in training and oversees the Growth Group Ministries at Cornerstone. He is married to Amanda and they have two children; Calista and Jace. David enjoys the pursuit of growing relationships in the church and pointing people to the truth of God’s word.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12">
-                    <div class="gg-container">
-                        <div class="row">
-                            <div class="col-12 col-md-4 col-xl-5">
                                 <img src="../../wp-content/uploads/2018/12/Hilkemann-Dave.jpg" alt="David Hilkemann" />
                             </div>
 
@@ -126,7 +126,25 @@ get_header();
 
                                 <h6 class="serif font-spaced font-size-sm text-uppercase font-color-gray">Directory of Ministries and Admimnistration</h6>
 
-                                <p>Dave is the Director of Ministries and Administration at Cornerstone and an elder-in-training. He and his wife, Dawn teach the 3rd and 4th grade Sunday school class, and the 5th and 6th grade youth group on Wednesday nights. Dave and Dawn have three daughters, Anna, Sadie, and Callie, and one son, Silas. Dave enjoys riding his bike, drinking coffee, and woodworking.</p>
+                                <p>Dave is the Director of Ministries and Administration at Cornerstone and an elder-in-training. He has been given the opportunity to oversee the duties in our church that the pastors do not have time to do themselves. Dave and his wife, Dawn also teach the 3rd and 4th grade Sunday school class. Dave and Dawn have three daughters, Anna, Sadie, and Callie, and one son, Silas. Dave enjoys riding his bike, drinking coffee, and woodworking.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				
+				 <div class="col-12">
+                    <div class="gg-container">
+                        <div class="row">
+                            <div class="col-12 col-md-4 col-xl-5">
+                                <img src="../../wp-content/uploads/2018/12/default-person-1.jpg" alt="Photo coming soon" />
+                            </div>
+
+                            <div class="col-12 col-md-8 col-xl-7">
+                                <h1 class="text-uppercase font-700 no-margin-bottom">Andy<br/>Metroka</h1>
+
+                                <h6 class="serif font-spaced font-size-sm text-uppercase font-color-gray">Elder in training</h6>
+
+                                <p>Bio coming soon.</p>
                             </div>
                         </div>
                     </div>
@@ -244,44 +262,6 @@ get_header();
                                 <h6 class="serif font-spaced font-size-sm text-uppercase font-color-gray">Deaconess</h6>
 
                                 <p>Lindsey Gardner first began attending Cornerstone Community Church in 1991. She and her husband Jeremy have two children, Dallas and Savannah. Lindsey serves as Cornerstone’s Children’s Ministry Director. In addition to serving in our children’s ministries, Lindsey serves on the Deacon’s Administrative Committee as the treasurer of the Deacon fund.</p>
-                            </div>
-                        </div>
-                    </div>
-				</div>	
-                
-				
-                <div class="col-12">
-                    <div class="gg-container">
-                        <div class="row">
-                            <div class="col-12 col-md-4 col-xl-5">
-                                <img src="../../wp-content/uploads/2020/02/Giudice-Jason.jpg" alt="Jason Giudice" />
-                            </div>
-
-                            <div class="col-12 col-md-8 col-xl-7">
-                                <h1 class="text-uppercase font-700 no-margin-bottom">Jason<br/>Giudice</h1>
-
-                                <h6 class="serif font-spaced font-size-sm text-uppercase font-color-gray">Deacon</h6>
-
-                                <p>Jason Giudice is thankful and super blessed to be a part of the Cornerstone family. He is married to the beautiful love of his life, Maralee and together have six children. He enjoys hunting, fishing, and spending time with his family, even if it's mowing the lawn or working on a project. He is often found where there is a need for a strong back and a weak mind!</p>
-                            </div>
-                        </div>
-                    </div>
-				</div>	
-
-				
-                <div class="col-12">
-                    <div class="gg-container">
-                        <div class="row">
-                            <div class="col-12 col-md-4 col-xl-5">
-                                <img src="../../wp-content/uploads/2020/02/Giudice-Maralee.jpg" alt="Maralee Giudice" />
-                            </div>
-
-                            <div class="col-12 col-md-8 col-xl-7">
-                                <h1 class="text-uppercase font-700 no-margin-bottom">Maralee<br/>Giudice</h1>
-
-                                <h6 class="serif font-spaced font-size-sm text-uppercase font-color-gray">Deaconess</h6>
-
-                                <p>Upon moving to Montana from Wyoming, Maralee began worshipping at CCC in 2015. She is married to her high-school sweetheart, Jason, mothering their 6 children, Jerome, Tyler (with wife Amanda), Garrett, Kyleigh, Rhidge and Brooks. One precious granddaughter, Kinzley, promoted her to a "Mimi"! Along with helping Jason on all his projects and ventures, homeschooling their two youngest boys, and babysitting Kinzley, she happily loves and serves many from her favorite place to be, her kitchen.  With great excitement and anticipation, she joins the diaconate to continue quietly loving and serving her family at Cornerstone however God presents the needs!!</p>
                             </div>
                         </div>
                     </div>
@@ -408,7 +388,7 @@ get_header();
 
                                 <h6 class="serif font-spaced font-size-sm text-uppercase font-color-gray">Deacon</h6>
 
-                                <p>Paul Stafford and his wife, Suzee, and their children, Ashlee and Mason moved to Billings from Wyoming in 2004. Ashlee and Mason now live in Denver and Bozeman with their spouses, Andy & Emma, and their first grandchild, Averee. They joined Cornerstone in 2014 because they loved the preaching and worship services but mostly because of the unique passion for honestly seeing who we are and how we are amazingly immersed in His grace. Paul’s role as deacon focuses on “going beyond the ordinary” in the benevolence ministry. He also like to put together classes on financial stewardship (which is also his day “job”), as well as seminars/classes on parenting, marriage and men’s classes. He also does a little to get us together on the softball field and out camping.</p>
+                                <p>Paul Stafford and his wife, Suzee, and their children, Ashlee and Mason moved to Billings from Wyoming in 2004. Ashlee and Mason now live in Denver and Bozeman with their spouses, Andy & Emma, and their first grandchild, Averee. They joined Cornerstone in 2014 because they loved the preaching and worship services but mostly because of the unique passion for honestly seeing who we are and how we are amazingly immersed in His grace. Paul’s role as deacon focuses on “going beyond the ordinary” in the benevolence ministry. He also likes to put together classes on financial stewardship (which is also his day “job”), as well as seminars/classes on parenting, marriage and men’s classes. He also does a little to get us together on the softball field and out camping.</p>
                             </div>
                         </div>
                     </div>
@@ -445,24 +425,6 @@ get_header();
                                 <h6 class="serif font-spaced font-size-sm text-uppercase font-color-gray">Deacon</h6>
 
                                 <p>Jeff Steinback has been attending Cornerstone since 2010. Pastor Jeff married Jeff and his wife Lindsay in 2012. They have 2 kids, Annalyn and John. Jeff serves on the Deacon’s Administrative Committee as the Diaconate President. He also helps as one of the Children's Church teachers, and participates in the Men's growth group. His family enjoys swimming and eating outside on the deck in nice weather. He also likes fly fishing and snow skiing.</p>
-                            </div>
-                        </div>
-                    </div>
-				</div>
-				
-                <div class="col-12">
-                    <div class="gg-container">
-                        <div class="row">
-                            <div class="col-12 col-md-4 col-xl-5">
-                                <img src="../../wp-content/uploads/2018/12/Yakel-Tom.jpg" alt="Tom Yakel" />
-                            </div>
-
-                            <div class="col-12 col-md-8 col-xl-7">
-                                <h1 class="text-uppercase font-700 no-margin-bottom">Tom<br/>Yakel</h1>
-
-                                <h6 class="serif font-spaced font-size-sm text-uppercase font-color-gray">Deacon</h6>
-
-                                <p>Tom Yakel has been serving in the audio and video ministry of Cornerstone Community Church for the past five years. He also helps to keep our church clean and in good repair. He loves helping the church and coin collecting.</p>
                             </div>
                         </div>
                     </div>

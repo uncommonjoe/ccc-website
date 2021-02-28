@@ -25,6 +25,7 @@
             'live' => $isLive
 		);
 		
+		//$success = $wpdb->insert( $table, $data );
 		//$success = $wpdb->query("UPDATE $table SET live = '$isLive' WHERE id = 1"));
 
 		$success = $wpdb->update(

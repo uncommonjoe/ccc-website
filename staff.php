@@ -81,7 +81,7 @@ get_header();
 
                                 <h6 class="serif font-spaced font-size-sm text-uppercase font-color-gray">Directory of Ministries & Administration</h6>
 
-                                <p>Dave is the Director of Ministries and Administration at Cornerstone. He is a deacon an elder-in-training. He is thankful for the opportunity to serve at Cornerstone. He and his wife, Dawn teach the 3rd and 4th grade Sunday school class, and the 5th and 6th grade youth group on Wednesday nights. Dave and Dawn have three daughters, Anna, Sadie, and Callie, and one son, Silas. Dave enjoys riding his bike, drinking coffee, and woodworking.</p>
+                                <p>Dave is the Director of Ministries and Administration at Cornerstone. He is a deacon and an elder-in-training. He has been given the opportunity to oversee the duties in our church that the pastors do not have time to do themselves. Dave and his wife, Dawn also teach the 3rd and 4th grade Sunday school class. Dave and Dawn have three daughters, Anna, Sadie, and Callie, and one son, Silas. Dave enjoys riding his bike, drinking coffee, and woodworking.</p>
                             </div>
                         </div>
                     </div>

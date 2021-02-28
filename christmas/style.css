@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+html {
+	scroll-behavior: smooth;
+}
+
+:target:before {
+	content: "";
+	display: block;
+	height: 100px;
+	margin: -100px 0 0;
+}
+
+body {
+	color: white;
+	font-size: 20px;
+	font-family: Pop pins, "Open Sans", sans-serif;
+	padding: 50px 0;
+	position: relative;
+	overflow-x: hidden;
+}
+
+body::before {
+	content: "";
+	display: block;
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -10;
+	background-image: url("img/nativity.png"), url("img/background.jpg");
+	background-repeat: no-repeat, no-repeat;
+	background-position: center 80%, center center;
+	background-size: contain, cover;
+	background-color: #071220;
+	-webkit-background-size: cover, cover;
+	-moz-background-size: cover, cover;
+	-o-background-size: cover, cover;
+
+	overflow-x: hidden;
+}
+
+@media screen and (min-width: 768px) {
+	body::before {
+		background-position: center 70%, center center !important;
+		background-size: cover, cover !important;
+	}
+
+	h1 {
+		font-size: 32px !important;
+	}
+
+	h2 {
+		font-size: 28px !important;
+	}
+
+	article {
+		max-width: 50%;
+		margin: auto;
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	margin: 0;
+}
+
+h1 {
+	font-size: 28px;
+}
+
+h2 {
+	font-size: 26px !important;
+	text-transform: uppercase;
+}
+
+h6 {
+	margin-top: 10px;
+}
+
+p {
+	padding: 15px 0;
+}
+
+hr {
+	width: 50vw;
+	margin: 50px auto;
+}
+
+a {
+	color: white;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-center {
+	text-align: center;
+}
+
+article {
+	position: relative;
+	padding: 50px 20px;
+}
+
+article::after {
+	content: "";
+	position: absolute;
+	bottom: -1px;
+	left: 50%;
+	width: 50%;
+	height: 1px;
+	background-color: rgba(255, 255, 255, 0.5);
+	transform: translateX(-50%);
+}
+
+article:last-child::after {
+	background-color: transparent;
+}
+
+article p:last-child {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+.credits {
+	font-size: 18px;
+	font-style: italic;
+	color:rgba(255, 255, 255, 0.5)
+}

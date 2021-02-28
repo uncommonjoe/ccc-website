@@ -2,8 +2,8 @@ angular.module('ccc')
     .controller('signupListController', ['$http', '_',
         function($http, _) {
             var vm = this;
-            //var url = '/';
-            var url = '/cornerstone/';
+            var url = '/';
+            //var url = '/cornerstone/';
 
             vm.isLoading = true;
             vm.deleteSignup = deleteSignup;

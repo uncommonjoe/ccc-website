@@ -23,7 +23,7 @@
 				WHERE (`id` > 1 AND `expired` IS NULL)
 			");
 		
-			foreach($get_ids as $value){
+			// foreach($get_ids as $value){
 				$where = array('id' => $value);
 
 				$wpdb->update(
@@ -31,7 +31,7 @@
 					$data,
 					$where,
 				);
-			};
+			// };
 
 		 	echo "Expired";	
 		}
